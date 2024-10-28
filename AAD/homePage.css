@@ -1,0 +1,74 @@
+#bckgroundImg>img{
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    z-index: 0;
+}
+
+#fieldForm{
+    width: 200px;
+    height: 250px;
+    background-color: #BBC6B5;
+    /*position: absolute;*/
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: -550px;
+    margin: auto;
+    z-index: 1;
+    border-radius: 10px;
+    opacity: 70%;
+}
+
+#staffForm{
+    width: 200px;
+    height: 250px;
+    background-color: #BBC6B5;
+    /*position: absolute;*/
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: -140px;
+    margin: auto;
+    z-index: 1;
+    border-radius: 10px;
+    opacity: 70%;
+}
+
+#cropsForm{
+    width: 200px;
+    height: 250px;
+    background-color: #BBC6B5;
+    /*position: absolute;*/
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 270px;
+    margin: auto;
+    z-index: 1;
+    border-radius: 10px;
+    opacity: 70%;
+}
+
+#toolsForm{
+    width: 200px;
+    height: 250px;
+    background-color: #BBC6B5;
+    /*position: absolute;*/
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 550px;
+    margin: auto;
+    z-index: 1;
+    border-radius: 10px;
+    opacity: 70%;
+}
+
+#forms{
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    display: flex;
+    gap: 10px;
+}

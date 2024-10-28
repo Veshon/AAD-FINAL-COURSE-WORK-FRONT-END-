@@ -19,7 +19,7 @@
 }
 
 #backgroundImg>img{
-    width: 98.5vw;
+    width: 98.7vw;
     height: 130vh;
 }
 
@@ -29,6 +29,7 @@
     left: 320px;
     font-family: Calibri;
     font-weight: bold;
+    color: #B98F5A;
 }
 
 .txtField{

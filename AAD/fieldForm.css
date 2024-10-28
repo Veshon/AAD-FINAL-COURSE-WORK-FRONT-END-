@@ -1,3 +1,23 @@
+#homeBtn{
+    position: absolute;
+    top: -10px;
+    left: -10px;
+}
+
+#homeBtn>a>button{
+    width: fit-content;
+    height: fit-content;
+    border-bottom-right-radius: 45px;
+    -moz-border-radius-topright: 45px;
+    background-color: white;
+}
+
+#homeBtn>a>button>img{
+    width: 20px;
+    height: 20px;
+    opacity: 100%;
+}
+
 #heading{
     position: absolute;
     top: 0;

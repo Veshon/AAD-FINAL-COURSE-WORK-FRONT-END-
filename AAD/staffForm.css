@@ -1,3 +1,11 @@
+#heading{
+    position: absolute;
+    top: 0;
+    left: 320px;
+    font-family: Calibri;
+    font-weight: bold;
+}
+
 .txtField{
     max-width: fit-content;
     max-height: fit-content;

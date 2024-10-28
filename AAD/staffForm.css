@@ -45,7 +45,7 @@
 }
 
 .txtField>input{
-    width: 200px;
+    width: 180px;
     height: 25px;
 }
 
@@ -63,7 +63,7 @@
 }
 
 .txtField2>input{
-    width: 200px;
+    width: 180px;
     height: 25px;
 }
 
@@ -81,7 +81,7 @@
 }
 
 .txtField3>input{
-    width: 200px;
+    width: 180px;
     height: 25px;
 }
 
@@ -99,7 +99,7 @@
 }
 
 .txtField4>input{
-    width: 200px;
+    width: 180px;
     height: 25px;
 }
 
@@ -111,15 +111,21 @@
     top: 200px;
     bottom: 0;
     right: 0;
-    left: -590px;
+    left: -560px;
     margin: auto;
     display: flex;
     gap: 50px;
 }
 
 .txtField5>input{
-    width: 190px;
+    width: 180px;
     height: 25px;
+}
+
+#allTxtFields>div>input{
+    font-size: 8px;
+    border-radius: 50px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 
 #allBtns>button{
@@ -127,6 +133,12 @@
     height: 30px;
     font-size: 12px;
     font-family: Calibri;
+    border-radius: 20px;
+    border-color: #DCBB8C;
+    background-color: #DCBB8C;
+    color: white;
+    font-weight: bold;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 
 #allBtns{

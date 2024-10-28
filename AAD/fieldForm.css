@@ -30,6 +30,7 @@
     left: 330px;
     font-family: Calibri;
     font-weight: bold;
+    color: #F5C584;
 }
 
 .txtField{
@@ -87,6 +88,7 @@
 }
 
 #allTxtFields>div>input{
+    font-size: 8px;
     border-radius: 50px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
@@ -101,6 +103,7 @@
     background-color: #DCBB8C;
     color: white;
     font-weight: bold;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 
 #allBtns{

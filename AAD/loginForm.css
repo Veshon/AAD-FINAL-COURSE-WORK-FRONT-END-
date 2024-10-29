@@ -1,0 +1,87 @@
+#backGroundImg>img{
+    width: 100vw;
+    height: 100vh;
+}
+
+#heading{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 320px;
+    margin: auto;
+    font-family: Calibri;
+    font-weight: bold;
+    color: #F5C584;
+}
+
+.txtField{
+    max-width: fit-content;
+    max-height: fit-content;
+    position: absolute;
+    top: -40px;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    gap: 50px;
+}
+
+.txtField>input{
+    width: 180px;
+    height: 25px;
+    margin: 0 10px 20px 0;
+}
+
+#allTxtFields>div>input{
+    font-size: 8px;
+    border-radius: 50px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+#allBtns>button{
+    width: 70px;
+    height: 30px;
+    font-size: 12px;
+    font-family: Calibri;
+    border-radius: 20px;
+    border-color: #DCBB8C;
+    background-color: #DCBB8C;
+    color: white;
+    font-weight: bold;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+#allBtns{
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    position: absolute;
+    top: 150px;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    gap: 10px;
+}
+
+#allBtns>button:hover{
+    background-color: #C9A174;
+    border-color: #C9A174;
+}
+
+#blurBckgound {
+    width: 210px;
+    height: 200px;
+    background-color: #F1D1AA;
+    opacity: 50%;
+    border-radius: 25px;
+    position: absolute;
+    top: -10px;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+

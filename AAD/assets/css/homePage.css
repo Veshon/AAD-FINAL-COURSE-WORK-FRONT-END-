@@ -5,6 +5,26 @@
     z-index: 0;
 }
 
+#homeBtn{
+    position: absolute;
+    top: -10px;
+    left: -10px;
+}
+
+#homeBtn>a>button{
+    width: fit-content;
+    height: fit-content;
+    border-bottom-right-radius: 45px;
+    -moz-border-radius-topright: 45px;
+    background-color: white;
+}
+
+#homeBtn>a>button>img{
+    width: 20px;
+    height: 20px;
+    opacity: 100%;
+}
+
 #fieldForm{
     width: 200px;
     height: 250px;
@@ -65,10 +85,26 @@
     opacity: 70%;
 }
 
+#vehicleForm{
+    width: 200px;
+    height: 250px;
+    background-color: #BBC6B5;
+    /*position: absolute;*/
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 550px;
+    margin: auto;
+    z-index: 1;
+    border-radius: 10px;
+    opacity: 70%;
+}
+
 #forms{
-    width: 100vw;
+    width: 97vw;
     height: 100vh;
     position: absolute;
     display: flex;
     gap: 10px;
+    left: 13px;
 }

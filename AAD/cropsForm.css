@@ -17,6 +17,10 @@
     background-color: white;
 }
 
+#homeBtn>a>button:hover{
+    background-color: #EEEEEE;
+}
+
 #homeBtn>a>button>img{
     width: 20px;
     height: 20px;

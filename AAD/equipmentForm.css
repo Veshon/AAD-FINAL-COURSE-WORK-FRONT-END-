@@ -17,6 +17,10 @@
     background-color: white;
 }
 
+#homeBtn>a>button:hover{
+    background-color: #EEEEEE;
+}
+
 #homeBtn>a>button>img{
     width: 20px;
     height: 20px;
@@ -71,6 +75,20 @@
     height: 25px;
 }
 
+#blurBckgound {
+    width: 750px;
+    height: 110px;
+    background-color: #F1D1AA;
+    opacity: 50%;
+    border-radius: 25px;
+    position: absolute;
+    top: -140px;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
 
 #allTxtFields>div>input{
     font-size: 8px;
@@ -96,7 +114,7 @@
     height: fit-content;
     display: flex;
     position: absolute;
-    top: 100px;
+    top: 50px;
     bottom: 0;
     right: 0;
     left: 0;

@@ -88,3 +88,12 @@
 #allBtns>button:active{
     background-color: #DCBB8C;
 }
+
+#signUp{
+    font-size: 8px;
+    position: relative;
+    top: 40px;
+    bottom: 0;
+    right: 0;
+    left: 30px;
+}

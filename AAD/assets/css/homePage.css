@@ -31,12 +31,12 @@
 
 }
 
-#fieldForm:hover>h6{
+#forms>div:hover>h6{
     display: block;
 }
 
-#fieldForm>h6{
-    /*display: none;*/
+#forms>div>h6{
+    display: none;
     color: #333333;
     font-size: 17px;
     font-weight: bold;

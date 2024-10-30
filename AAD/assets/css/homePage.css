@@ -28,15 +28,15 @@
 #forms>div:hover{
     cursor: pointer;
     /*opacity: 90%;*/
-
 }
 
-#forms>div:hover>h6:first-child{
+#forms>div:hover>a>h6:first-child{
     display: block;
     transform: translateY(-20px); /* Start slightly above */
     animation: fadeDown 1s forwards; /* Call the animation */
 }
 
+/* Define the fade-down animation */
 @keyframes fadeDown {
     0% {
         opacity: 0; /* Start fully transparent */
@@ -48,12 +48,13 @@
     }
 }
 
-#forms>div:hover>h6:nth-child(2){
+#forms>div:hover>a>h6:nth-child(2){
     display: block;
     transform: translateY(-20px); /* Start slightly above */
     animation: fadeDown 1s forwards; /* Call the animation */
 }
 
+/* Define the fade-down animation */
 @keyframes fadeDown {
     0% {
         opacity: 0; /* Start fully transparent */
@@ -65,7 +66,7 @@
     }
 }
 
-#forms>div>h6:first-child{
+#forms>div>a>h6:first-child{
     width: fit-content;
     display: none;
     color: black;
@@ -78,8 +79,9 @@
     left: 50px;
 }
 
-#forms>div>h6:nth-child(2){
+#forms>div>a>h6:nth-child(2){
     width: fit-content;
+    height: 180px;
     display: none;
     color: black;
     font-size: 17px;

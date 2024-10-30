@@ -27,19 +27,77 @@
 
 #forms>div:hover{
     cursor: pointer;
-    opacity: 90%;
+    /*opacity: 90%;*/
 
 }
 
-#forms>div:hover>h6{
+#forms>div:hover>h6:first-child{
     display: block;
+    transform: translateY(-20px); /* Start slightly above */
+    animation: fadeDown 1s forwards; /* Call the animation */
 }
 
-#forms>div>h6{
+@keyframes fadeDown {
+    0% {
+        opacity: 0; /* Start fully transparent */
+        transform: translateY(-20px); /* Start slightly above */
+    }
+    100% {
+        opacity: 1; /* End fully visible */
+        transform: translateY(0); /* End at its original position */
+    }
+}
+
+#forms>div:hover>h6:nth-child(2){
+    display: block;
+    transform: translateY(-20px); /* Start slightly above */
+    animation: fadeDown 1s forwards; /* Call the animation */
+}
+
+@keyframes fadeDown {
+    0% {
+        opacity: 0; /* Start fully transparent */
+        transform: translateY(-20px); /* Start slightly above */
+    }
+    100% {
+        opacity: 1; /* End fully visible */
+        transform: translateY(0); /* End at its original position */
+    }
+}
+
+#forms>div>h6:first-child{
+    width: fit-content;
     display: none;
-    color: #333333;
+    color: black;
     font-size: 17px;
     font-weight: bold;
+    position: relative;
+    top: 30px;
+    bottom: 0;
+    right: 0;
+    left: 50px;
+}
+
+#forms>div>h6:nth-child(2){
+    width: fit-content;
+    display: none;
+    color: black;
+    font-size: 17px;
+    font-weight: bold;
+    position: relative;
+    top: 30px;
+    bottom: 0;
+    right: 0;
+    left: 20px;
+}
+
+#forms>div{
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+
+}
+#forms{
+    width: fit-content;
+    height: fit-content;
 }
 
 #fieldForm{

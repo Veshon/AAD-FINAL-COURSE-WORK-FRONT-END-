@@ -1,3 +1,5 @@
+Backend of tis project: https://github.com/Veshon/Demo-AAD-Final-Project
+
 # Green Shadow Crop Monitoring System
 
 Green Shadow Crop Monitoring System is a web-based application developed to manage and monitor various operations for Green Shadow (Pvt) Ltd., a mid-scale agricultural company in Sri Lanka. The system is built using Spring Boot and MySQL, providing a user-friendly platform to oversee crop, field, staff, vehicle, and equipment data.

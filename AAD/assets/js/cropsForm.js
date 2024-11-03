@@ -82,29 +82,29 @@ $(document).ready(function () {
     $("#delete").click(function(event) {
         event.preventDefault();
 
-        let idE = $("#fieldCode").val();
+        let code = $("#cropCode").val();
 
-        console.log(idE);
+        console.log(code);
 
-        const customerData = {
-            cusId: idE,
+        const cropData = {
+            cusId: code,
         };
 
-        console.log(customerData);
+        console.log(cropData);
 
-        const customerJSON = JSON.stringify(customerData);
-        console.log(customerJSON);
+        const cropJSON = JSON.stringify(cropData);
+        console.log(cropJSON);
 
         $.ajax({
-            url: "http://localhost:5050/fcw/api/v1/fields/" + idE,
+            url: "http://localhost:5050/fcw/api/v1/crops/" + code,
             type: "DELETE",
             headers: { "Content-Type": "application/json" },
             success: function(response) {
-                alert("Field deleted successfully!");
+                alert("Crop deleted successfully!");
             },
             error: function(xhr, status, error) {
-                console.error("Error saving field:", error);
-                alert("Failed to delete field.");
+                console.error("Error deleting crop:", error);
+                alert("Failed to delete crop.");
             }
         });
     });

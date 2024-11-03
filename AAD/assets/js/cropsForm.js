@@ -156,10 +156,10 @@ $(document).ready(function () {
 });
 
 function clearFields() {
-    document.getElementById('fieldName').value = '';
-    document.getElementById('location').value = '';
-    document.getElementById('size').value = '';
-    document.getElementById('img1').value = '';
-    document.getElementById('img2').value = '';
+    document.getElementById('commonName').value = '';
+    document.getElementById('scientificName').value = '';
+    document.getElementById('image').value = '';
+    document.getElementById('category').value = '';
+    document.getElementById('season').value = '';
 }
 

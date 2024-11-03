@@ -133,4 +133,50 @@ $(document).ready(function () {
         });
     });
 
+    ///////////////////////////////////////Update/////////////////////////////////////////////
+    $("#update").click(function(event) {
+        event.preventDefault();
+
+        let equipmentId = $("#eId").val();
+        let name = $("#eName").val();
+        let type = $("#type").val();
+        let status = $("#status").val();
+        let staffId = $("#sDetails").val();
+        let fieldCode = $("#fDetails").val();
+
+        console.log(equipmentId)
+        console.log(name)
+        console.log(type)
+        console.log(status)
+        console.log(staffId)
+        console.log(fieldCode)
+
+
+        const staffData = {
+            equipmentId: equipmentId,
+            name: name,
+            type: type,
+            status: status,
+            staffId: staffId,
+            fieldCode: fieldCode,
+        };
+
+        const staffJSON = JSON.stringify(staffData)
+
+        // Send AJAX request
+        $.ajax({
+            url: "http://localhost:5050/fcw/api/v1/equipments/" + equipmentId,
+            type: "PUT",
+            data: staffJSON,
+            // processData: false, // Important: prevent jQuery from processing the data
+            headers: { "Content-Type": "application/json" },
+            success: function(response) {
+                alert("Equipment updated successfully!");
+            },
+            error: function(xhr, status, error) {
+                console.error("Error updating Equipment:", error);
+                alert("Equipment not updated.");
+            }
+        });
+    });
 });

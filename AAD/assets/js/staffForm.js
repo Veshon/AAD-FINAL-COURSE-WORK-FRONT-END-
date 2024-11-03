@@ -165,6 +165,84 @@ $(document).ready(function () {
         });
     });
 
+    ///////////////////////////////////////Update/////////////////////////////////////////////
+    $("#update").click(function(event) {
+        event.preventDefault();
+
+        let staffId = $("#staffId").val();
+        let firstNameE = $("#firstName").val();
+        let lastNameE = $("#lastName").val();
+        let designationE = $("#designation").val();
+        let genderE = $("#gender").val();
+        let joinedDate = $("#joinedDate").val();
+        let dob = $("#dob").val();
+        let al1 = $("#al1").val();
+        let al2 = $("#al2").val();
+        let al3 = $("#al3").val();
+        let al4 = $("#al4").val();
+        let al5 = $("#al5").val();
+        let contactNo = $("#contactNo").val();
+        let email = $("#email").val();
+        let role = $("#role").val();
+        let fieldCode = $("#fieldCode").val();
+        let vehicleCode = $("#vehicleCode").val();
+
+        console.log(firstNameE)
+        console.log(lastNameE)
+        console.log(designationE)
+        console.log(genderE)
+        console.log(joinedDate)
+        console.log(dob)
+        console.log(al1)
+        console.log(al2)
+        console.log(al3)
+        console.log(al4)
+        console.log(al5)
+        console.log(contactNo)
+        console.log(email)
+        console.log(role)
+        console.log(fieldCode)
+        console.log(vehicleCode)
+
+        const staffData = {
+            id: staffId,
+            firstName: firstNameE,
+            lastName: lastNameE,
+            designation: designationE,
+            gender: genderE,
+            joinedDate: joinedDate,
+            dob: dob,
+            addressLine01: al1,
+            addressLine02: al2,
+            addressLine03: al3,
+            addressLine04: al4,
+            addressLine05: al5,
+            contactNo: contactNo,
+            email: email,
+            role: role,
+            fieldCode: fieldCode,
+            vehicleCode: vehicleCode
+        };
+
+        const staffJSON = JSON.stringify(staffData)
+
+        // Send AJAX request
+        $.ajax({
+            url: "http://localhost:5050/fcw/api/v1/staff/" + staffId,
+            type: "PUT",
+            data: staffJSON,
+            // processData: false, // Important: prevent jQuery from processing the data
+            headers: { "Content-Type": "application/json" },
+            success: function(response) {
+                alert("Staff member updated successfully!");
+            },
+            error: function(xhr, status, error) {
+                console.error("Error updating staff member:", error);
+                alert("Staff member not updated.");
+            }
+        });
+    });
+
     //////////////////////////////////Clear/////////////////////////////////////////
     $("#clear").click(function() {
         clearFields()

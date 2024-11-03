@@ -166,4 +166,16 @@ $(document).ready(function () {
         });
     });
 
+    //////////////////////////////////Clear/////////////////////////////////////////
+    $("#clear").click(function() {
+        clearFields()
+    })
 });
+
+function clearFields() {
+    document.getElementById('licensePlateNo').value = '';
+    document.getElementById('type').value = '';
+    document.getElementById('fuelType').value = '';
+    document.getElementById('status').value = '';
+    document.getElementById('remarks').value = '';
+}

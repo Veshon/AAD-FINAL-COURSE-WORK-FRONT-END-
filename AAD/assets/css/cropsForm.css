@@ -37,6 +37,11 @@
     /*text-shadow: 0px 3px 5px rgba(185, 143, 90, 1);*/
 }
 
+.txtField>select{
+    width: 200px;
+    height: 25px;
+}
+
 .txtField{
     max-width: fit-content;
     max-height: fit-content;
@@ -55,6 +60,7 @@
     height: 25px;
 }
 
+
 .txtField2{
     max-width: fit-content;
     max-height: fit-content;
@@ -69,6 +75,11 @@
 }
 
 .txtField2>input{
+    width: 200px;
+    height: 25px;
+}
+
+.txtField2>select{
     width: 200px;
     height: 25px;
 }
@@ -91,7 +102,18 @@
     height: 25px;
 }
 
+.txtField3>select{
+    width: 200px;
+    height: 25px;
+}
+
 #allTxtFields>div>input{
+    font-size: 8px;
+    border-radius: 50px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+#allTxtFields>div>select{
     font-size: 8px;
     border-radius: 50px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;

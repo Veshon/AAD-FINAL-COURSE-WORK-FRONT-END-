@@ -18,26 +18,39 @@
 
 <div id="allTxtFields">
     <div class="txtField">
-        <input class="form-control form-control-sm" type="text" placeholder="Code" aria-label=".form-control-sm example">
-        <input class="form-control form-control-sm" type="text" placeholder="Common Name" aria-label=".form-control-sm example">
-        <input class="form-control form-control-sm" type="text" placeholder="Scientific Name" aria-label=".form-control-sm example">
+        <select id="cropCode" class="form-control form-control-sm" type="text" placeholder="Code" aria-label=".form-control-sm example"></select>
+        <input id="commonName" class="form-control form-control-sm" type="text" placeholder="Common Name" aria-label=".form-control-sm example">
+        <input id="scientificName" class="form-control form-control-sm" type="text" placeholder="Scientific Name" aria-label=".form-control-sm example">
     </div>
 
     <div class="txtField2">
-        <input class="form-control form-control-sm" type="text" placeholder="Image" aria-label=".form-control-sm example">
-        <input class="form-control form-control-sm" type="text" placeholder="Category" aria-label=".form-control-sm example">
-        <input class="form-control form-control-sm" type="text" placeholder="Season" aria-label=".form-control-sm example">
+        <input id="image" class="form-control form-control-sm" type="file" placeholder="Image" aria-label=".form-control-sm example">
+        <select id="category" class="form-control form-control-sm" type="text" placeholder="Category" aria-label=".form-control-sm example">
+            <option>Category</option>
+            <option value="Fruits">Fruits</option>
+            <option value="Vegetables">Vegetables</option>
+            <option value="Cereals">Cereals</option>
+            <option value="Pulses">Pulses</option>
+
+        </select>
+        <select id="season" class="form-control form-control-sm" type="text" placeholder="Season" aria-label=".form-control-sm example">
+            <option>Season</option>
+            <option value="Spring">Spring</option>
+            <option value="Summer">Summer</option>
+            <option value="Fall">Fall</option>
+            <option value="Winter">Winter</option>
+        </select>
     </div>
 
     <div class="txtField3">
-        <input class="form-control form-control-sm" type="text" placeholder="Field" aria-label=".form-control-sm example">
+        <select id="fieldCode" class="form-control form-control-sm" type="text" placeholder="Field" aria-label=".form-control-sm example"></select>
     </div>
 
     <div id="allBtns">
-        <button type="button" class="btn btn-success">Save</button>
-        <button type="button" class="btn btn-primary">Update</button>
-        <button type="button" class="btn btn-danger">Delete</button>
-        <button type="button" class="btn btn-warning">Clear</button>
+        <button id="save" type="button" class="btn btn-success">Save</button>
+        <button id="update" type="button" class="btn btn-primary">Update</button>
+        <button id="delete" type="button" class="btn btn-danger">Delete</button>
+        <button id="clear" type="button" class="btn btn-warning">Clear</button>
     </div>
 
     <div id="homeBtn">

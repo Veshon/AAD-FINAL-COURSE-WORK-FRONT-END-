@@ -36,6 +36,7 @@
 .txtField>select{
     width: 200px;
     height: 25px;
+    cursor: pointer;
 }
 
 .txtField{
@@ -77,6 +78,7 @@
 .txtField2>select{
     width: 200px;
     height: 25px;
+    cursor: pointer;
 }
 
 .txtField3{

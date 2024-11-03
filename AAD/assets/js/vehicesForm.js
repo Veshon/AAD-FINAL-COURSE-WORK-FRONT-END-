@@ -86,4 +86,33 @@ $(document).ready(function () {
             }
         });
     });
+
+    ///////////////////////////////////////Delete/////////////////////////////////////////////
+    $("#delete").click(function(event) {
+        event.preventDefault();
+
+        let code = $("#vehicleCode").val();
+
+        console.log(code)
+
+        const vehicleData = {
+            id: code,
+        };
+
+        const vehicleJSON = JSON.stringify(vehicleData)
+
+        // Send AJAX request
+        $.ajax({
+            url: "http://localhost:5050/fcw/api/v1/vehicles/" + code,
+            type: "DELETE",
+            headers: { "Content-Type": "application/json" },
+            success: function(response) {
+                alert("Vehicle deleted successfully!");
+            },
+            error: function(xhr, status, error) {
+                console.error("Error deleting vehicle:", error);
+                alert("Vehicle not deleted.");
+            }
+        });
+    });
 });

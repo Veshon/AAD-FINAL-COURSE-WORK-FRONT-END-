@@ -95,6 +95,7 @@
 .txtField3>input{
     width: 200px;
     height: 25px;
+    cursor: pointer;
 }
 
 #allTxtFields>div>input{

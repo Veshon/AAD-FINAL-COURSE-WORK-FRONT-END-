@@ -60,7 +60,7 @@ $(document).ready(function () {
         }
     });
 
-    ////////////////////////
+///////////////////////////////////////Save/////////////////////////////////////////////
     $("#save").click(function(event) {
         event.preventDefault();
 
@@ -122,6 +122,43 @@ $(document).ready(function () {
             error: function(xhr, status, error) {
                 console.error("Error saving field:", error);
                 alert("Failed to delete field.");
+            }
+        });
+    });
+
+/////////////////////////////////////Update///////////////////////////////////////////
+    $("#update").click(function(event) {
+        event.preventDefault();
+
+        let idE = $("#fieldCode").val();
+        let nameE = $("#fieldName").val();
+        let locationE = $("#location").val();
+        let sizeE = $("#size").val();
+        let img1E = $("#img1")[0].files[0]; // Access the file input's first file
+        let img2E = $("#img2")[0].files[0];
+
+        // Create a FormData object to hold the form data
+        let formData = new FormData();
+        formData.append("fieldCode", idE);
+        formData.append("fieldName", nameE);
+        formData.append("fieldLocation", locationE);
+        formData.append("extentSize", sizeE);
+        formData.append("fieldImage1", img1E); // Append the first image file
+        formData.append("fieldImage2", img2E); // Append the second image file
+
+        // Send AJAX request
+        $.ajax({
+            url: "http://localhost:5050/fcw/api/v1/fields/"+idE,
+            type: "PUT",
+            data: formData,
+            processData: false, // Important: prevent jQuery from processing the data
+            contentType: false, // Important: prevent jQuery from setting Content-Type header
+            success: function(response) {
+                alert("Field update successfully!");
+            },
+            error: function(xhr, status, error) {
+                console.error("Error update field:", error);
+                alert("Failed to update field.");
             }
         });
     });

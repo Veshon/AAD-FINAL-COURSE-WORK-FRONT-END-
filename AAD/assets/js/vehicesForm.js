@@ -115,4 +115,55 @@ $(document).ready(function () {
             }
         });
     });
+
+    ///////////////////////////////////////Update/////////////////////////////////////////////
+    $("#update").click(function(event) {
+        event.preventDefault();
+
+        let vehicleCode = $("#vehicleCode").val();
+        let licensePlateNumber = $("#licensePlateNo").val();
+        let vehicleCategory = $("#category").val();
+        let fuelType = $("#fuelType").val();
+        let status = $("#status").val();
+        let staffDetails = $("#sDetails").val();
+        let remarks = $("#remarks").val();
+
+        console.log(vehicleCode)
+        console.log(licensePlateNumber)
+        console.log(vehicleCategory)
+        console.log(fuelType)
+        console.log(status)
+        console.log(staffDetails)
+        console.log(remarks)
+
+
+        const vehicleData = {
+            vehicleCode: vehicleCode,
+            licensePlateNumber: licensePlateNumber,
+            vehicleCategory: vehicleCategory,
+            fuelType: fuelType,
+            status: status,
+            staffDetails: staffDetails,
+            remarks: remarks,
+        };
+
+        const vehicleJSON = JSON.stringify(vehicleData)
+
+        // Send AJAX request
+        $.ajax({
+            url: "http://localhost:5050/fcw/api/v1/vehicles/" + vehicleCode,
+            type: "PUT",
+            data: vehicleJSON,
+            // processData: false, // Important: prevent jQuery from processing the data
+            headers: { "Content-Type": "application/json" },
+            success: function(response) {
+                alert("Vehicle updated successfully!");
+            },
+            error: function(xhr, status, error) {
+                console.error("Error updating vehicle:", error);
+                alert("Vehicle not updated.");
+            }
+        });
+    });
+
 });

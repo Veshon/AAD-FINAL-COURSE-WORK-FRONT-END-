@@ -179,4 +179,15 @@ $(document).ready(function () {
             }
         });
     });
+
+    //////////////////////////////////Clear/////////////////////////////////////////
+    $("#clear").click(function() {
+        clearFields()
+    })
 });
+
+function clearFields() {
+    document.getElementById('eName').value = '';
+    document.getElementById('type').value = '';
+    document.getElementById('status').value = '';
+}

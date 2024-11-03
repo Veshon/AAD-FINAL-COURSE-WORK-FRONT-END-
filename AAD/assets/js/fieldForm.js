@@ -1,4 +1,66 @@
 $(document).ready(function () {
+
+    // AJAX request to fetch all field codes
+    $.ajax({
+        url: "http://localhost:5050/fcw/api/v1/fields",
+        type: "GET",
+        dataType: "json",
+        success: function(data) {
+            let select = $("#fieldCode");
+            select.empty(); // Clear existing options if any
+
+            // Populate select element with field codes
+            data.forEach(function(field) {
+                select.append(new Option(field.fieldCode));
+            });
+        },
+        error: function(xhr, status, error) {
+            console.error("Error loading field codes:", error);
+            alert("Failed to load field codes.");
+        }
+    });
+
+    // AJAX request to fetch all crop codes
+    $.ajax({
+        url: "http://localhost:5050/fcw/api/v1/crops",
+        type: "GET",
+        dataType: "json",
+        success: function(data) {
+            let select = $("#crop");
+            select.empty(); // Clear existing options if any
+
+            // Populate select element with field codes
+            data.forEach(function(crop) {
+                select.append(new Option(crop.code));
+            });
+        },
+        error: function(xhr, status, error) {
+            console.error("Error loading crop codes:", error);
+            alert("Failed to load crop codes.");
+        }
+    });
+
+    // AJAX request to fetch all staff codes
+    $.ajax({
+        url: "http://localhost:5050/fcw/api/v1/staff",
+        type: "GET",
+        dataType: "json",
+        success: function(data) {
+            let select = $("#staff");
+            select.empty(); // Clear existing options if any
+
+            // Populate select element with field codes
+            data.forEach(function(staff) {
+                select.append(new Option(staff.id));
+            });
+        },
+        error: function(xhr, status, error) {
+            console.error("Error loading staff ids:", error);
+            alert("Failed to load staff ids.");
+        }
+    });
+
+    ////////////////////////
     $("#save").click(function(event) {
         event.preventDefault();
 
@@ -29,6 +91,37 @@ $(document).ready(function () {
             error: function(xhr, status, error) {
                 console.error("Error saving field:", error);
                 alert("Failed to save field.");
+            }
+        });
+    });
+
+///////////////////////////////////////Delete/////////////////////////////////////////////
+    $("#delete").click(function(event) {
+        event.preventDefault();
+
+        let idE = $("#fieldCode").val();
+
+        console.log(idE);
+
+        const customerData = {
+            cusId: idE,
+        };
+
+        console.log(customerData);
+
+        const customerJSON = JSON.stringify(customerData);
+        console.log(customerJSON);
+
+        $.ajax({
+            url: "http://localhost:5050/fcw/api/v1/fields/" + idE,
+            type: "DELETE",
+            headers: { "Content-Type": "application/json" },
+            success: function(response) {
+                alert("Field deleted successfully!");
+            },
+            error: function(xhr, status, error) {
+                console.error("Error saving field:", error);
+                alert("Failed to delete field.");
             }
         });
     });

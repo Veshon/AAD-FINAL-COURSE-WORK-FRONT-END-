@@ -64,39 +64,80 @@ $(document).ready(function () {
     $("#save").click(function(event) {
         event.preventDefault();
 
-        let nameE = $("#fieldName").val();
-        let locationE = $("#location").val();
-        let sizeE = $("#size").val();
-        let img1E = $("#img1")[0].files[0]; // Access the file input's first file
-        let img2E = $("#img2")[0].files[0];
+        let firstNameE = $("#firstName").val();
+        let lastNameE = $("#lastName").val();
+        let designationE = $("#designation").val();
+        let genderE = $("#gender").val();
+        let joinedDate = $("#joinedDate").val();
+        let dob = $("#dob").val();
+        let al1 = $("#al1").val();
+        let al2 = $("#al2").val();
+        let al3 = $("#al3").val();
+        let al4 = $("#al4").val();
+        let al5 = $("#al5").val();
+        let contactNo = $("#contactNo").val();
+        let email = $("#email").val();
+        let role = $("#role").val();
+        let fieldCode = $("#fieldCode").val();
+        let vehicleCode = $("#vehicleCode").val();
 
-        // Create a FormData object to hold the form data
-        let formData = new FormData();
-        formData.append("fieldName", nameE);
-        formData.append("fieldLocation", locationE);
-        formData.append("extentSize", sizeE);
-        formData.append("fieldImage1", img1E); // Append the first image file
-        formData.append("fieldImage2", img2E); // Append the second image file
+        console.log(firstNameE)
+        console.log(lastNameE)
+        console.log(designationE)
+        console.log(genderE)
+        console.log(joinedDate)
+        console.log(dob)
+        console.log(al1)
+        console.log(al2)
+        console.log(al3)
+        console.log(al4)
+        console.log(al5)
+        console.log(contactNo)
+        console.log(email)
+        console.log(role)
+        console.log(fieldCode)
+        console.log(vehicleCode)
+
+        const staffData = {
+            firstName: firstNameE,
+            lastName: lastNameE,
+            designation: designationE,
+            gender: genderE,
+            joinedDate: joinedDate,
+            dob: dob,
+            addressLine01: al1,
+            addressLine02: al2,
+            addressLine03: al3,
+            addressLine04: al4,
+            addressLine05: al5,
+            contactNo: contactNo,
+            email: email,
+            role: role,
+            fieldCode: fieldCode,
+            vehicleCode: vehicleCode
+        };
+
+        const staffJSON = JSON.stringify(staffData)
 
         // Send AJAX request
         $.ajax({
-            url: "http://localhost:5050/fcw/api/v1/fields",
+            url: "http://localhost:5050/fcw/api/v1/staff",
             type: "POST",
-            data: formData,
-            processData: false, // Important: prevent jQuery from processing the data
-            contentType: false, // Important: prevent jQuery from setting Content-Type header
+            data: staffJSON,
+            // processData: false, // Important: prevent jQuery from processing the data
+            headers: { "Content-Type": "application/json" },
             success: function(response) {
-                alert("Field saved successfully!");
+                alert("Staff member saved successfully!");
             },
             error: function(xhr, status, error) {
-                console.error("Error saving field:", error);
-                alert("Failed to save field.");
+                console.error("Error saving staff member:", error);
+                alert("Staff member not saved.");
             }
         });
     });
 
 ///////////////////////////////////////Delete/////////////////////////////////////////////
-    $("#delete").click(function(event) {
+/*    $("#delete").click(function(event) {
         event.preventDefault();
 
         let idE = $("#fieldCode").val();
@@ -161,7 +202,7 @@ $(document).ready(function () {
                 alert("Failed to update field.");
             }
         });
-    });
+    });*/
 
     //////////////////////////////////Clear/////////////////////////////////////////
     $("#clear").click(function() {
@@ -170,10 +211,19 @@ $(document).ready(function () {
 });
 
 function clearFields() {
-    document.getElementById('fieldName').value = '';
-    document.getElementById('location').value = '';
-    document.getElementById('size').value = '';
-    document.getElementById('img1').value = '';
-    document.getElementById('img2').value = '';
+    document.getElementById('firstName').value = '';
+    document.getElementById('lastName').value = '';
+    document.getElementById('designation').value = '';
+    document.getElementById('gender').value = '';
+    document.getElementById('joinedDate').value = '';
+    document.getElementById('dob').value = '';
+    document.getElementById('al1').value = '';
+    document.getElementById('al2').value = '';
+    document.getElementById('al3').value = '';
+    document.getElementById('al4').value = '';
+    document.getElementById('al5').value = '';
+    document.getElementById('contactNo').value = '';
+    document.getElementById('email').value = '';
+    document.getElementById('role').value = '';
 }
 

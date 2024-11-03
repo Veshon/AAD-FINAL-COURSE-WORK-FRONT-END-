@@ -136,73 +136,34 @@ $(document).ready(function () {
         });
     });
 
-///////////////////////////////////////Delete/////////////////////////////////////////////
-/*    $("#delete").click(function(event) {
+    ///////////////////////////////////////Delete/////////////////////////////////////////////
+    $("#delete").click(function(event) {
         event.preventDefault();
 
-        let idE = $("#fieldCode").val();
+        let staffId = $("#staffId").val();
 
-        console.log(idE);
+        console.log(staffId)
 
-        const customerData = {
-            cusId: idE,
+        const staffData = {
+            id: staffId,
         };
 
-        console.log(customerData);
-
-        const customerJSON = JSON.stringify(customerData);
-        console.log(customerJSON);
-
-        $.ajax({
-            url: "http://localhost:5050/fcw/api/v1/fields/" + idE,
-            type: "DELETE",
-            headers: { "Content-Type": "application/json" },
-            success: function(response) {
-                alert("Field deleted successfully!");
-            },
-            error: function(xhr, status, error) {
-                console.error("Error saving field:", error);
-                alert("Failed to delete field.");
-            }
-        });
-    });
-
-/////////////////////////////////////Update///////////////////////////////////////////
-    $("#update").click(function(event) {
-        event.preventDefault();
-
-        let idE = $("#fieldCode").val();
-        let nameE = $("#fieldName").val();
-        let locationE = $("#location").val();
-        let sizeE = $("#size").val();
-        let img1E = $("#img1")[0].files[0]; // Access the file input's first file
-        let img2E = $("#img2")[0].files[0];
-
-        // Create a FormData object to hold the form data
-        let formData = new FormData();
-        formData.append("fieldCode", idE);
-        formData.append("fieldName", nameE);
-        formData.append("fieldLocation", locationE);
-        formData.append("extentSize", sizeE);
-        formData.append("fieldImage1", img1E); // Append the first image file
-        formData.append("fieldImage2", img2E); // Append the second image file
+        const staffJSON = JSON.stringify(staffData)
 
         // Send AJAX request
         $.ajax({
-            url: "http://localhost:5050/fcw/api/v1/fields/"+idE,
-            type: "PUT",
-            data: formData,
-            processData: false, // Important: prevent jQuery from processing the data
-            contentType: false, // Important: prevent jQuery from setting Content-Type header
+            url: "http://localhost:5050/fcw/api/v1/staff/" + staffId,
+            type: "DELETE",
+            headers: { "Content-Type": "application/json" },
             success: function(response) {
-                alert("Field update successfully!");
+                alert("Staff member deleted successfully!");
             },
             error: function(xhr, status, error) {
-                console.error("Error update field:", error);
-                alert("Failed to update field.");
+                console.error("Error deleting staff member:", error);
+                alert("Staff member not deleted.");
             }
         });
-    });*/
+    });
 
     //////////////////////////////////Clear/////////////////////////////////////////
     $("#clear").click(function() {

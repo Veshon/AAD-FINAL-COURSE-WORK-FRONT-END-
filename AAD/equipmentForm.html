@@ -18,22 +18,26 @@
 
 <div id="allTxtFields">
     <div class="txtField">
-        <input class="form-control form-control-sm" type="text" placeholder="ID" aria-label=".form-control-sm example">
-        <input class="form-control form-control-sm" type="text" placeholder="Name" aria-label=".form-control-sm example">
-        <input class="form-control form-control-sm" type="text" placeholder="Type" aria-label=".form-control-sm example">
+        <select id="eId" class="form-control form-control-sm" type="text" placeholder="ID" aria-label=".form-control-sm example"></select>
+        <input id="eName" class="form-control form-control-sm" type="text" placeholder="Name" aria-label=".form-control-sm example">
+        <input id="type" class="form-control form-control-sm" type="text" placeholder="Type" aria-label=".form-control-sm example">
     </div>
 
     <div class="txtField2">
-        <input class="form-control form-control-sm" type="text" placeholder="Status" aria-label=".form-control-sm example">
-        <input class="form-control form-control-sm" type="text" placeholder="Assigned Staff Details" aria-label=".form-control-sm example">
-        <input class="form-control form-control-sm" type="text" placeholder="Assigned Field Details" aria-label=".form-control-sm example">
+        <select id="status" class="form-control form-control-sm" type="text" placeholder="Status" aria-label=".form-control-sm example">
+            <option>Status</option>
+            <option value="Available">Available</option>
+            <option value="Unavailable">Unavailable</option>
+        </select>
+        <select id="sDetails" class="form-control form-control-sm" type="text" placeholder="Assigned Staff Details" aria-label=".form-control-sm example"></select>
+        <select id="fDetails" class="form-control form-control-sm" type="text" placeholder="Assigned Field Details" aria-label=".form-control-sm example"></select>
     </div>
 
     <div id="allBtns">
-        <button type="button" class="btn btn-success">Save</button>
-        <button type="button" class="btn btn-primary">Update</button>
-        <button type="button" class="btn btn-danger">Delete</button>
-        <button type="button" class="btn btn-warning">Clear</button>
+        <button id="save" type="button" class="btn btn-success">Save</button>
+        <button id="update" type="button" class="btn btn-primary">Update</button>
+        <button id="delete" type="button" class="btn btn-danger">Delete</button>
+        <button id="clear" type="button" class="btn btn-warning">Clear</button>
     </div>
 
     <div id="homeBtn">

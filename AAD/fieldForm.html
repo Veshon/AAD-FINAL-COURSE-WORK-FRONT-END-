@@ -41,13 +41,43 @@
     <button id="update" type="button" class="btn btn-primary">Update</button>
     <button id="delete" type="button" class="btn btn-danger">Delete</button>
     <button id="clear" type="button" class="btn btn-warning">Clear</button>
+    <button id="load" type="button" class="btn btn-warning">Load</button>
   </div>
+
+<div id="preview">
+    <h6 id="t1" style="color: #F5C584; font-size: 11px; position: relative; top: -90px; bottom: 0; right: 0; left: 185px; display: none">Field 1</h6>
+    <h6 id="t2" style="color: #F5C584; font-size: 11px; position: relative; top: -90px; bottom: 0; right: 0; left: 450px; display: none">Field 2</h6>
+    <img title="img1" id="img1Preview" alt="img1"/>
+    <img title="img2" id="img2Preview" alt="img2"/>
+</div>
 
     <div id="homeBtn">
         <a href="index.html"><button type="button" class="btn"><img src="assets/images/icons8-home-96.png"></button></a>
     </div>
 
 </div>
+
+<script>
+    document.getElementById('load').addEventListener('click', function() {
+        var image = document.getElementById('img1Preview');
+        var image2 = document.getElementById('img2Preview');
+        var t1 = document.getElementById('t1');
+        var t2 = document.getElementById('t2');
+        if (image.style.display === 'none' || image2.style.display === 'non' || t1.style.display === 'none' || t2.style.display === 'none') {
+            image.style.display = 'block'; // Show the image
+            image2.style.display = 'block'; // Show the image
+            t1.style.display = 'block'; // Show the image
+            t2.style.display = 'block'; // Show the image
+            this.innerText = 'Hide Img'; // Change button text
+        } else {
+            image.style.display = 'none'; // Hide the image
+            image2.style.display = 'none'; // Hide the image
+            t1.style.display = 'none'; // Hide the image
+            t2.style.display = 'none'; // Hide the image
+            this.innerText = 'Show Img'; // Change button text back
+        }
+    });
+</script>
 
 </body>
 </html>

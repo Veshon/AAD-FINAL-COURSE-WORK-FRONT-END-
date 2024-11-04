@@ -4,6 +4,79 @@
 
 $(document).ready(function () {
 
+    $("#load").click(function(event) {
+        event.preventDefault();
+
+        let selectedFieldCode = $("#fieldCode").val(); // Get the selected field code from input or dropdown
+
+        if (selectedFieldCode) {
+            // AJAX request to get field data
+            $.ajax({
+                url: "http://localhost:5050/fcw/api/v1/fields/" + selectedFieldCode,
+                type: "GET",
+                contentType: "application/json",
+                success: function(data) {
+                    // Populate the form fields with the received data
+                    $("#fieldName").val(data.fieldName);
+                    $("#location").val(data.fieldLocation);
+                    $("#size").val(data.extentSize);
+
+                    // Display base64 images as previews
+                    if (data.fieldImage1) {
+                        $("#img1Preview").attr("src", "data:image/jpeg;base64," + data.fieldImage1);
+                    } else {
+                        $("#img1Preview").attr("src", ""); // Clear if no image
+                    }
+
+                    if (data.fieldImage2) {
+                        $("#img2Preview").attr("src", "data:image/jpeg;base64," + data.fieldImage2);
+                    } else {
+                        $("#img2Preview").attr("src", ""); // Clear if no image
+                    }
+                },
+                error: function(xhr, status, error) {
+                    console.error("Error fetching field data:", error);
+                    alert("Failed to load field data.");
+                }
+            });
+        } else {
+            alert("Please enter a valid field code.");
+        }
+    });
+
+//Load Fields
+ /*   $("#load").click(function(event) {
+        event.preventDefault();
+
+        let selectedFieldCode = $("#fieldCode").val(); // Get the selected field code from input or dropdown
+
+        if (selectedFieldCode) {
+            // AJAX request to get field data
+            $.ajax({
+                url: "http://localhost:5050/fcw/api/v1/fields/" + selectedFieldCode,
+                type: "GET",
+                contentType: "application/json",
+                success: function(data) {
+                    // Populate the form fields with the received data
+                    $("#fieldName").val(data.fieldName);
+                    $("#location").val(data.fieldLocation);
+                    $("#size").val(data.extentSize);
+
+                    // Assuming fieldImage1 and fieldImage2 are base64 strings
+                    $("#img1Preview").attr("src", "data:image/jpeg;base64," + data.fieldImage1);
+                    $("#img2Preview").attr("src", "data:image/jpeg;base64," + data.fieldImage2);
+                },
+                error: function(xhr, status, error) {
+                    console.error("Error fetching field data:", error);
+                    alert("Failed to load field data.");
+                }
+            });
+        } else {
+            alert("Please enter a valid field code.");
+        }
+    });*/
+
+
     // AJAX request to fetch all field codes
     $.ajax({
         url: "http://localhost:5050/fcw/api/v1/fields",

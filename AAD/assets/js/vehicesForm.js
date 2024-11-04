@@ -116,6 +116,7 @@ $(document).ready(function () {
             headers: { "Content-Type": "application/json" },
             success: function(response) {
                 alert("Vehicle saved successfully!");
+                clearFields()
             },
             error: function(xhr, status, error) {
                 console.error("Error saving vehicle:", error);
@@ -149,6 +150,7 @@ $(document).ready(function () {
             error: function(xhr, status, error) {
                 console.error("Error deleting vehicle:", error);
                 alert("Vehicle not deleted.");
+                clearFields()
             }
         });
         clearFields()
@@ -196,6 +198,7 @@ $(document).ready(function () {
             headers: { "Content-Type": "application/json" },
             success: function(response) {
                 alert("Vehicle updated successfully!");
+                clearFields()
             },
             error: function(xhr, status, error) {
                 console.error("Error updating vehicle:", error);

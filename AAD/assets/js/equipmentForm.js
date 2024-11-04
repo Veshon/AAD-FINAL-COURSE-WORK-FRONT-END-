@@ -147,6 +147,7 @@ $(document).ready(function () {
             headers: { "Content-Type": "application/json" },
             success: function(response) {
                 alert("Equipment saved successfully!");
+                clearFields()
             },
             error: function(xhr, status, error) {
                 console.error("Error saving Equipment:", error);
@@ -176,6 +177,7 @@ $(document).ready(function () {
             headers: { "Content-Type": "application/json" },
             success: function(response) {
                 alert("Equipment deleted successfully!");
+                clearFields()
             },
             error: function(xhr, status, error) {
                 console.error("Error deleting Equipment:", error);
@@ -224,6 +226,7 @@ $(document).ready(function () {
             headers: { "Content-Type": "application/json" },
             success: function(response) {
                 alert("Equipment updated successfully!");
+                clearFields()
             },
             error: function(xhr, status, error) {
                 console.error("Error updating Equipment:", error);

@@ -177,6 +177,7 @@ $(document).ready(function () {
             headers: { "Content-Type": "application/json" },
             success: function(response) {
                 alert("Staff member saved successfully!");
+                clearFields()
             },
             error: function(xhr, status, error) {
                 console.error("Error saving staff member:", error);
@@ -206,13 +207,13 @@ $(document).ready(function () {
             headers: { "Content-Type": "application/json" },
             success: function(response) {
                 alert("Staff member deleted successfully!");
+                clearFields()
             },
             error: function(xhr, status, error) {
                 console.error("Error deleting staff member:", error);
                 alert("Staff member not deleted.");
             }
         });
-        clearFields()
     });
 
     ///////////////////////////////////////Update/////////////////////////////////////////////
@@ -285,6 +286,7 @@ $(document).ready(function () {
             headers: { "Content-Type": "application/json" },
             success: function(response) {
                 alert("Staff member updated successfully!");
+                clearFields()
             },
             error: function(xhr, status, error) {
                 console.error("Error updating staff member:", error);

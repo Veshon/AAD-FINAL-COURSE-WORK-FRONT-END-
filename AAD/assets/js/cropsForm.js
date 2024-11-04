@@ -113,8 +113,8 @@ $(document).ready(function () {
             contentType: false, // Important: prevent jQuery from setting Content-Type header
             success: function(response) {
                 Swal.fire({
-                    title: "Good job!",
-                    text: "You clicked the button!",
+                    title: "Saved!",
+                    text: "Crop saved successfully!",
                     icon: "success"
                 });
             },
@@ -161,6 +161,7 @@ $(document).ready(function () {
                     headers: { "Content-Type": "application/json" },
                     success: function(response) {
                         clearFields(); // Clear fields only after successful deletion
+                        clearFields()
                     },
                     error: function(xhr, status, error) {
                         console.error("Error deleting crop:", error);
@@ -237,6 +238,7 @@ $(document).ready(function () {
             contentType: false, // Important: prevent jQuery from setting Content-Type header
             success: function(response) {
                 alert("Crop update successfully!");
+                clearFields()
             },
             error: function(xhr, status, error) {
                 console.error("Error update crop:", error);

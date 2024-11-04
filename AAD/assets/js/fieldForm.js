@@ -173,6 +173,7 @@ $(document).ready(function () {
             contentType: false, // Important: prevent jQuery from setting Content-Type header
             success: function(response) {
                 alert("Field saved successfully!");
+                clearFields()
             },
             error: function(xhr, status, error) {
                 console.error("Error saving field:", error);
@@ -204,13 +205,13 @@ $(document).ready(function () {
             headers: { "Content-Type": "application/json" },
             success: function(response) {
                 alert("Field deleted successfully!");
+                clearFields()
             },
             error: function(xhr, status, error) {
                 console.error("Error saving field:", error);
                 alert("Failed to delete field.");
             }
         });
-        clearFields()
     });
 
 /////////////////////////////////////Update///////////////////////////////////////////
@@ -242,6 +243,7 @@ $(document).ready(function () {
             contentType: false, // Important: prevent jQuery from setting Content-Type header
             success: function(response) {
                 alert("Field update successfully!");
+                clearFields()
             },
             error: function(xhr, status, error) {
                 console.error("Error update field:", error);

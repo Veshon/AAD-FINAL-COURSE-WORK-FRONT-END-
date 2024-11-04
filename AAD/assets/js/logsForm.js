@@ -205,6 +205,7 @@ $(document).ready(function () {
                     headers: { "Content-Type": "application/json" },
                     success: function(response) {
                         clearFields(); // Clear fields only after successful deletion
+                        clearFields()
                     },
                     error: function(xhr, status, error) {
                         console.error("Error deleting crop:", error);

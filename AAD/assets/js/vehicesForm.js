@@ -1,5 +1,36 @@
 $(document).ready(function () {
 
+    $("#load").click(function(event) {
+        event.preventDefault();
+
+        let selectedFieldCode = $("#vehicleCode").val(); // Get the selected field code from input or dropdown
+
+        if (selectedFieldCode) {
+            // AJAX request to get field data
+            $.ajax({
+                url: "http://localhost:5050/fcw/api/v1/vehicles/" + selectedFieldCode,
+                type: "GET",
+                contentType: "application/json",
+                success: function(data) {
+                    // Populate the form fields with the received data
+                    $("#licensePlateNo").val(data.licensePlateNumber);
+                    $("#category").val(data.vehicleCategory);
+                    $("#fuelType").val(data.fuelType);
+                    $("#status").val(data.status);
+                    $("#sDetails").val("STAFF-35343a34-36b4-4106-86cc-186f4c16adb0");
+                    $("#remarks").val(data.remarks);
+
+                },
+                error: function(xhr, status, error) {
+                    console.error("Error fetching vehicle data:", error);
+                    alert("Failed to load vehicle data.");
+                }
+            });
+        } else {
+            alert("Please enter a valid vehicle code.");
+        }
+    });
+
     // AJAX request to fetch all vehicle ids
     $.ajax({
         url: "http://localhost:5050/fcw/api/v1/vehicles",
@@ -120,6 +151,7 @@ $(document).ready(function () {
                 alert("Vehicle not deleted.");
             }
         });
+        clearFields()
     });
 
     ///////////////////////////////////////Update/////////////////////////////////////////////

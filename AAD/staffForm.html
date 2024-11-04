@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="assets/css/staffForm.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="assets/js/staffForm.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 </head>
 <body>
 
@@ -34,8 +36,8 @@
            <option value="MALE">Male</option>
            <option value="FEMALE">Female</option>
        </select>
-        <input id="joinedDate" class="form-control form-control-sm" type="text" placeholder="Joined Date" aria-label=".form-control-sm example">
-        <input id="dob" class="form-control form-control-sm" type="text" placeholder="DOB" aria-label=".form-control-sm example">
+        <input style="background-color: white" id="joinedDate" class="form-control form-control-sm" type="text" placeholder="Joined Date" aria-label=".form-control-sm example">
+        <input style="background-color: white" id="dob" class="form-control form-control-sm" type="text" placeholder="DOB" aria-label=".form-control-sm example">
         <input id="al1" class="form-control form-control-sm" type="text" placeholder="Address Line 1" aria-label=".form-control-sm example">
     </div>
 
@@ -75,5 +77,18 @@
 </div>
 </div>
 
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        flatpickr("#joinedDate", {
+            dateFormat: "Y-m-d",
+            placeholder: "YYYY-MM-DD" // Add placeholder text
+        });
+
+        flatpickr("#dob", {
+            dateFormat: "Y-m-d",
+            placeholder: "YYYY-MM-DD" // Add placeholder text
+        });
+    });
+</script>
 </body>
 </html>

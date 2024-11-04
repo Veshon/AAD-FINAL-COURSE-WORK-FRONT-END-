@@ -8,10 +8,13 @@ $(document).ready(function () {
         success: function(data) {
             let select = $("#cropCode");
             select.empty(); // Clear existing options if any
+            select.append(new Option("Select crop code"));
 
             // Populate select element with field codes
             data.forEach(function(crop) {
+                select.append(new Option("Name: "+crop.commonName + " - Category: "+crop.category));
                 select.append(new Option(crop.code));
+                select.append(new Option("______________________________________________________"));
             });
         },
         error: function(xhr, status, error) {
@@ -28,10 +31,13 @@ $(document).ready(function () {
         success: function(data) {
             let select = $("#fieldCode");
             select.empty(); // Clear existing options if any
+            select.append(new Option("Select field code"));
 
             // Populate select element with field codes
             data.forEach(function(field) {
+                select.append(new Option("Name: " + field.fieldName + " - Location: "+field.fieldLocation));
                 select.append(new Option(field.fieldCode));
+                select.append(new Option("______________________________________________________"));
             });
         },
         error: function(xhr, status, error) {

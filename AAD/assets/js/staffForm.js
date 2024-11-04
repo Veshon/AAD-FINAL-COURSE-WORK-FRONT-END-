@@ -14,6 +14,7 @@ $(document).ready(function () {
             data.forEach(function(staff) {
                 select.append(new Option("Name: "+staff.firstName + " - Designation: "+staff.designation));
                 select.append(new Option(staff.id));
+                select.append(new Option("______________________________________________________"));
             });
         },
         error: function(xhr, status, error) {
@@ -36,6 +37,7 @@ $(document).ready(function () {
             data.forEach(function(field) {
                 select.append(new Option("Name: " + field.fieldName + " - Location: "+field.fieldLocation));
                 select.append(new Option(field.fieldCode));
+                select.append(new Option("______________________________________________________"));
             });
         },
         error: function(xhr, status, error) {
@@ -58,6 +60,7 @@ $(document).ready(function () {
             data.forEach(function(vehicle) {
                 select.append(new Option("License No: "+vehicle.licensePlateNumber + " - Category: "+vehicle.vehicleCategory));
                 select.append(new Option(vehicle.vehicleCode));
+                select.append(new Option("______________________________________________________"));
             });
         },
         error: function(xhr, status, error) {

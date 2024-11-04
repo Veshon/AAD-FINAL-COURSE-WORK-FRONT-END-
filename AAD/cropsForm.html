@@ -51,6 +51,11 @@
         <button id="update" type="button" class="btn btn-primary">Update</button>
         <button id="delete" type="button" class="btn btn-danger">Delete</button>
         <button id="clear" type="button" class="btn btn-warning">Clear</button>
+        <button id="load" type="button" class="btn btn-warning">Load</button>
+    </div>
+
+    <div id="preview">
+        <img id="cropImgPreview">
     </div>
 
     <div id="homeBtn">
@@ -58,6 +63,19 @@
     </div>
 
 </div>
+
+<script>
+    document.getElementById('load').addEventListener('click', function() {
+        var image = document.getElementById('cropImgPreview');
+        if (image.style.display === 'none') {
+            image.style.display = 'block'; // Show the image
+            this.innerText = 'Hide Img'; // Change button text
+        } else {
+            image.style.display = 'none'; // Hide the image
+            this.innerText = 'Show Img'; // Change button text back
+        }
+    });
+</script>
 
 </body>
 </html>

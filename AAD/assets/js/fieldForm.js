@@ -12,10 +12,11 @@ $(document).ready(function () {
         success: function(data) {
             let select = $("#fieldCode");
             select.empty(); // Clear existing options if any
+            select.append(new Option("Select field code"));
 
             // Populate select element with field codes
             data.forEach(function(field) {
-                select.append(new Option("Name: " + field.fieldName + " - Location: "+field.location));
+                select.append(new Option("Name: " + field.fieldName + " - Location: "+field.fieldLocation));
                 select.append(new Option(field.fieldCode));
             });
         },
@@ -33,9 +34,11 @@ $(document).ready(function () {
         success: function(data) {
             let select = $("#crop");
             select.empty(); // Clear existing options if any
+            select.append(new Option("Select crop code"));
 
             // Populate select element with field codes
             data.forEach(function(crop) {
+                select.append(new Option("Name: "+crop.commonName + " - Category: "+crop.category));
                 select.append(new Option(crop.code));
             });
         },
@@ -53,9 +56,11 @@ $(document).ready(function () {
         success: function(data) {
             let select = $("#staff");
             select.empty(); // Clear existing options if any
+            select.append(new Option("Select staff ID"));
 
             // Populate select element with field codes
             data.forEach(function(staff) {
+                select.append(new Option("Name: "+staff.firstName + " - Designation: "+staff.designation));
                 select.append(new Option(staff.id));
             });
         },

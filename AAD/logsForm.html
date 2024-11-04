@@ -7,39 +7,74 @@
     <link rel="stylesheet" href="assets/css/logsForm.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="assets/js/logsForm.js"></script>
+
+    <style>
+        /* Ensure the table layout is fixed */
+        #table {
+            table-layout: fixed; /* Fixed layout to respect specified widths */
+            width: 100%; /* Full width */
+            border-collapse: collapse; /* Remove spacing between cells */
+        }
+
+        /* Style for all table cells */
+        td, th {
+            border: 1px solid #ddd; /* Border for visibility */
+            padding: 4px; /* Add padding */
+            text-align: center; /* Center text in cells */
+            overflow: hidden; /* Prevent overflow */
+            white-space: nowrap; /* Prevent text wrapping */
+            text-overflow: ellipsis; /* Show ellipsis for overflowing text */
+        }
+
+/*        !* Style for the image container *!
+        #img {
+            width: 50px;  !* Fixed width for the cell *!
+            height: 50px; !* Fixed height for the cell *!
+            overflow: hidden; !* Hide overflow content *!
+            display: flex; !* Use flexbox to center the image *!
+            justify-content: center; !* Center the image horizontally *!
+            align-items: center; !* Center the image vertically *!
+        }*/
+
+        /* Style for the images */
+        .img-preview {
+            width: 50px; /* Fixed width for the image */
+            height: 50px; /* Fixed height for the image */
+            object-fit: cover; /* Crop the image to fit the cell */
+        }
+    </style>
+
 </head>
 <body>
 
 <table id="table" class="table">
     <thead class="thead-dark">
     <tr>
-        <th scope="col">#</th>
-        <th scope="col">First</th>
-        <th scope="col">Last</th>
-        <th scope="col">Handle</th>
+        <th scope="col">Log ID</th>
+        <th id="lDate" scope="col">Log Date</th>
+        <th scope="col">Details</th>
+        <th id="oImg" scope="col">Observed img</th>
+        <th scope="col">Field Code</th>
+        <th scope="col">Crop Code</th>
+        <th scope="col">Staff ID</th>
     </tr>
     </thead>
     <tbody>
-    <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
-    </tr>
-    <tr>
-        <th scope="row">2</th>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>@fat</td>
-    </tr>
-    <tr>
-        <th scope="row">3</th>
-        <td>Larry</td>
-        <td>the Bird</td>
-        <td>@twitter</td>
+    <tr style="width: 50px">
+        <td style="width: 50px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;" id="logId"></td>
+        <td id="date"></td>
+        <td id="details"></td>
+        <td style="width: 50px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;" id="img">
+<!--            <img id="img1Preview" class="img-preview">-->
+        </td>
+        <td id="fCode"></td>
+        <td id="cCode"></td>
+        <td id="sId"></td>
     </tr>
     </tbody>
 </table>
+
+    <button id="load" type="button" class="btn btn-warning">Load</button>
 
 </body>
 </html>

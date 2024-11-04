@@ -1,10 +1,63 @@
-#table{
-    width: 500px;
+#table {
+    table-layout: fixed;
+    max-width: 700px;
+    width: 700px;
     height: 200px;
+    font-size: 10px;
     position: absolute;
-    top: -50px;
+    top: -30px;
     bottom: 0;
     right: 0;
     left: 0;
     margin: auto;
+}
+
+th{
+    max-width: fit-content(50px);
+    width: 50px;
+    height: 50px;
+    font-weight: bold;
+}
+
+thead{
+    max-width: fit-content(50px);
+    width: 50px;
+    height: 50px;
+}
+
+#td {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 10px;
+}
+
+#load{
+    width: 70px;
+    height: 30px;
+    position: absolute;
+    top: 200px;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+}
+
+#img {
+    width: 50px;  /* Fixed width for the cell */
+    height: 50px; /* Fixed height for the cell */
+    overflow: hidden; /* Hide overflow content */
+}
+
+/*#img1Preview{*/
+/*    width: 100px;*/
+/*    height: 50px;*/
+/*}*/
+
+.img-preview {
+    max-width: 100%; /* Prevents the image from exceeding the cell's width */
+    max-height: 100%; /* Prevents the image from exceeding the cell's height */
+    width: auto; /* Maintain aspect ratio */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Crop the image to fit the cell */
 }

@@ -132,26 +132,25 @@ $(document).ready(function () {
         }
     });
 
-///////////////////////////////////////Save/////////////////////////////////////////////
+    ///////////////////////////////////////Save/////////////////////////////////////////////
     $("#save").click(function(event) {
         event.preventDefault();
 
-        let date = $("#logDate").val();
-        let details = $("#logDetails").val();
-        let img = $("#logImg")[0].files[0];
-        let fCode = $("#fieldCode").val();
-        let cCode = $("#cropCode").val();
-        let sId = $("#staffId").val();
-
+        let logDate = $("#logDate").val();
+        let logDetails = $("#logDetails").val();
+        let logImg = $("#logImg")[0].files[0]; // Access the file input's first file
+        let fieldCodes = $("#fieldCodes").val();
+        let cropCode = $("#cropCode").val();
+        let staffId = $("#staffId").val();
 
         // Create a FormData object to hold the form data
         let formData = new FormData();
-        formData.append("logDate", date);
-        formData.append("logDetails", details);
-        formData.append("observedImage", img); // Append the first image file
-        formData.append("fieldCode", fCode);
-        formData.append("cropCode", cCode);
-        formData.append("staffId", sId);
+        formData.append("logDate", logDate);
+        formData.append("logDetails", logDetails);
+        formData.append("observedImage", logImg);
+        formData.append("fieldCode", fieldCodes);
+        formData.append("cropCode", cropCode);
+        formData.append("staffId", staffId);
 
         // Send AJAX request
         $.ajax({
@@ -161,21 +160,66 @@ $(document).ready(function () {
             processData: false, // Important: prevent jQuery from processing the data
             contentType: false, // Important: prevent jQuery from setting Content-Type header
             success: function(response) {
-                Swal.fire({
-                    title: "Good job!",
-                    text: "You clicked the button!",
-                    icon: "success"
-                });
+                alert("Log saved successfully!");
             },
             error: function(xhr, status, error) {
-                console.error("Error saving crops", error);
-                Swal.fire({
-                    icon: "error",
-                    title: "Oops...",
-                    text: "Something went wrong!",
-                });
+                console.error("Error saving log:", error);
+                alert("Failed to save log.");
             }
         });
     });
 
+    ///////////////////////////////////////Delete/////////////////////////////////////////////
+
+    $("#delete").click(function(event) {
+        event.preventDefault();
+
+        let code = $("#logCode").val();
+        console.log(code);
+
+        const cropData = {
+            cusId: code,
+        };
+
+        console.log(cropData);
+        const cropJSON = JSON.stringify(cropData);
+        console.log(cropJSON);
+
+        // SweetAlert2 confirmation dialog
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonText: 'Yes, delete it!',
+            cancelButtonText: 'No, cancel!',
+        }).then((result) => {
+            if (result.isConfirmed) {
+                $.ajax({
+                    url: "http://localhost:5050/fcw/api/v1/logs/" + code,
+                    type: "DELETE",
+                    headers: { "Content-Type": "application/json" },
+                    success: function(response) {
+                        clearFields(); // Clear fields only after successful deletion
+                    },
+                    error: function(xhr, status, error) {
+                        console.error("Error deleting crop:", error);
+                        alert("Failed to delete crop.");
+                    }
+                });
+            } else {
+                console.log("Crop deletion canceled.");
+            }
+        });
+    });
+    //////////////////////////////////Clear/////////////////////////////////////////
+    $("#clear").click(function() {
+        clearFields()
+    })
 });
+
+function clearFields() {
+    document.getElementById('logDate').value = '';
+    document.getElementById('logDetails').value = '';
+    document.getElementById('logImg').value = '';
+}

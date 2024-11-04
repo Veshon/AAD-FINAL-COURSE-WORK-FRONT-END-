@@ -9,6 +9,33 @@
     <script src="assets/js/logsForm.js"></script>
 
     <style>
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .thead-dark th {
+            position: relative;
+            background-color: #343a40;
+            color: white;
+            cursor: pointer;
+        }
+
+        .thead-dark th div {
+            display: inline-block;
+            padding: 10px;
+            position: relative;
+        }
+
+        .resize-handle {
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 10px; /* Width of the handle */
+            height: 100%;
+            cursor: col-resize;
+            z-index: 1;
+        }
         /* Ensure the table layout is fixed */
         #table {
             table-layout: fixed; /* Fixed layout to respect specified widths */
@@ -47,6 +74,12 @@
 </head>
 <body>
 
+<div id="backGroundImg"><img src="assets/images/vehicles3.jpg"></div>
+
+<h3 id="heading">Logs Management</h3>
+
+<div id="blurBckgound"></div>
+
 <table id="table" class="table">
     <thead class="thead-dark">
     <tr>
@@ -74,7 +107,72 @@
     </tbody>
 </table>
 
-    <button id="load" type="button" class="btn btn-warning">Load</button>
+<div id="allTxtFields">
+    <div class="txtField">
+        <input id="logCode" class="form-control form-control-sm" type="text" placeholder="Log Code" aria-label=".form-control-sm example">
+        <input id="logDate" class="form-control form-control-sm" type="text" placeholder="Date" aria-label=".form-control-sm example">
+        <input id="logDetails" class="form-control form-control-sm" type="text" placeholder="Log Details" aria-label=".form-control-sm example">
+    </div>
 
+    <div class="txtField2">
+        <input id="logImg" class="form-control form-control-sm" type="file" placeholder="Observed Image" aria-label=".form-control-sm example">
+        <select style="height: 25px;" id="fieldCode" class="form-control form-control-sm" type="text" placeholder="Field Code" aria-label=".form-control-sm example">
+            <option>Select field code</option>
+        </select>
+        <select style="height: 25px;" id="cropCode" class="form-control form-control-sm" type="text" placeholder="Crop code" aria-label=".form-control-sm example">
+            <option>Select crop code</option>
+        </select>
+    </div>
+
+    <div class="txtField3">
+        <select  style="height: 25px;" id="staffId" class="form-control form-control-sm" type="text" placeholder="Staff ID" aria-label=".form-control-sm example">
+            <option>Select staff ID</option>
+        </select>
+    </div>
+
+    <div id="allBtns">
+        <button id="save" type="button" class="btn btn-success">Save</button>
+        <button id="update" type="button" class="btn btn-primary">Update</button>
+        <button id="delete" type="button" class="btn btn-danger">Delete</button>
+        <button id="clear" type="button" class="btn btn-warning">Clear</button>
+        <button id="load" type="button" class="btn btn-warning">Load</button>
+    </div>
+
+    <div id="homeBtn">
+        <a href="index.html"><button type="button" class="btn"><img src="assets/images/icons8-home-96.png"></button></a>
+    </div>
+
+</div>
+<script>
+    document.querySelectorAll('#table th').forEach(th => {
+        const div = document.createElement('div');
+        div.innerHTML = th.innerHTML; // Keep the existing content
+        th.innerHTML = ''; // Clear the th content
+        th.appendChild(div); // Append the new div
+        const resizeHandle = document.createElement('div');
+        resizeHandle.className = 'resize-handle';
+        th.appendChild(resizeHandle); // Append the resize handle
+
+        let startX, startWidth;
+
+        resizeHandle.addEventListener('mousedown', (e) => {
+            startX = e.clientX;
+            startWidth = th.offsetWidth;
+            document.addEventListener('mousemove', resize);
+            document.addEventListener('mouseup', stopResize);
+        });
+
+        function resize(e) {
+            const newWidth = startWidth + (e.clientX - startX);
+            th.style.width = newWidth + 'px';
+            div.style.width = newWidth + 'px'; // Keep the div width in sync
+        }
+
+        function stopResize() {
+            document.removeEventListener('mousemove', resize);
+            document.removeEventListener('mouseup', stopResize);
+        }
+    });
+</script>
 </body>
 </html>

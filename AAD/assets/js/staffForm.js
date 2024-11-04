@@ -8,9 +8,11 @@ $(document).ready(function () {
         success: function(data) {
             let select = $("#staffId");
             select.empty(); // Clear existing options if any
+            select.append(new Option("Select staff ID"));
 
             // Populate select element with field codes
             data.forEach(function(staff) {
+                select.append(new Option("Name: "+staff.firstName + " - Designation: "+staff.designation));
                 select.append(new Option(staff.id));
             });
         },
@@ -28,9 +30,11 @@ $(document).ready(function () {
         success: function(data) {
             let select = $("#fieldCode");
             select.empty(); // Clear existing options if any
+            select.append(new Option("Select field code"));
 
             // Populate select element with field codes
             data.forEach(function(field) {
+                select.append(new Option("Name: " + field.fieldName + " - Location: "+field.fieldLocation));
                 select.append(new Option(field.fieldCode));
             });
         },
@@ -48,9 +52,11 @@ $(document).ready(function () {
         success: function(data) {
             let select = $("#vehicleCode");
             select.empty(); // Clear existing options if any
+            select.append(new Option("Select vehicle ID"));
 
             // Populate select element with field codes
             data.forEach(function(vehicle) {
+                select.append(new Option("License No: "+vehicle.licensePlateNumber + " - Category: "+vehicle.vehicleCategory));
                 select.append(new Option(vehicle.vehicleCode));
             });
         },

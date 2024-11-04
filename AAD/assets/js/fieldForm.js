@@ -1,3 +1,7 @@
+
+// select.append(new Option(field.fieldCode +" - "+ field.fieldName));
+
+
 $(document).ready(function () {
 
     // AJAX request to fetch all field codes
@@ -11,6 +15,7 @@ $(document).ready(function () {
 
             // Populate select element with field codes
             data.forEach(function(field) {
+                select.append(new Option("Name: " + field.fieldName + " - Location: "+field.location));
                 select.append(new Option(field.fieldCode));
             });
         },

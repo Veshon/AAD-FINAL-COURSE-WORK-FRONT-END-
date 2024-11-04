@@ -160,7 +160,11 @@ $(document).ready(function () {
             processData: false, // Important: prevent jQuery from processing the data
             contentType: false, // Important: prevent jQuery from setting Content-Type header
             success: function(response) {
-                alert("Log saved successfully!");
+                Swal.fire({
+                    title: "Saved!",
+                    text: "Log saved successfully!",
+                    icon: "success"
+                });
             },
             error: function(xhr, status, error) {
                 console.error("Error saving log:", error);

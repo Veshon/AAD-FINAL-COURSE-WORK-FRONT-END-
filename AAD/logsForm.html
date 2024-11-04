@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="assets/css/logsForm.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="assets/js/logsForm.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
 
     <style>
         .table {
@@ -109,14 +111,16 @@
 
 <div id="allTxtFields">
     <div class="txtField">
-        <input id="logCode" class="form-control form-control-sm" type="text" placeholder="Log Code" aria-label=".form-control-sm example">
+        <select style="height: 25px;" id="logCode" class="form-control form-control-sm" type="text" placeholder="Log Code" aria-label=".form-control-sm example">
+            <option>Select log code</option>
+        </select>
         <input id="logDate" class="form-control form-control-sm" type="text" placeholder="Date" aria-label=".form-control-sm example">
         <input id="logDetails" class="form-control form-control-sm" type="text" placeholder="Log Details" aria-label=".form-control-sm example">
     </div>
 
     <div class="txtField2">
         <input id="logImg" class="form-control form-control-sm" type="file" placeholder="Observed Image" aria-label=".form-control-sm example">
-        <select style="height: 25px;" id="fieldCode" class="form-control form-control-sm" type="text" placeholder="Field Code" aria-label=".form-control-sm example">
+        <select style="height: 25px;" id="fieldCodes" class="form-control form-control-sm" type="text" placeholder="Field Code" aria-label=".form-control-sm example">
             <option>Select field code</option>
         </select>
         <select style="height: 25px;" id="cropCode" class="form-control form-control-sm" type="text" placeholder="Crop code" aria-label=".form-control-sm example">

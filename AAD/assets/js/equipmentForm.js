@@ -182,6 +182,7 @@ $(document).ready(function () {
                 alert("Equipment not deleted.");
             }
         });
+        clearFields()
     });
 
     ///////////////////////////////////////Update/////////////////////////////////////////////

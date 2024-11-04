@@ -210,6 +210,7 @@ $(document).ready(function () {
                 alert("Failed to delete field.");
             }
         });
+        clearFields()
     });
 
 /////////////////////////////////////Update///////////////////////////////////////////

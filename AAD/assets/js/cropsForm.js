@@ -113,6 +113,7 @@ $(document).ready(function () {
                 alert("Failed to delete crop.");
             }
         });
+        clearFields()
     });
 
 /////////////////////////////////////Update///////////////////////////////////////////

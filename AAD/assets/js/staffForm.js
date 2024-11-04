@@ -1,5 +1,45 @@
 $(document).ready(function () {
 
+    $("#load").click(function(event) {
+        event.preventDefault();
+
+        let selectedFieldCode = $("#staffId").val(); // Get the selected field code from input or dropdown
+
+        if (selectedFieldCode) {
+            // AJAX request to get field data
+            $.ajax({
+                url: "http://localhost:5050/fcw/api/v1/staff/" + selectedFieldCode,
+                type: "GET",
+                contentType: "application/json",
+                success: function(data) {
+                    // Populate the form fields with the received data
+                    $("#firstName").val(data.firstName);
+                    $("#lastName").val(data.lastName);
+                    $("#designation").val(data.designation);
+                    $("#gender").val(data.gender);
+                    $("#joinedDate").val(data.joinedDate);
+                    $("#dob").val(data.dob);
+                    $("#al1").val(data.addressLine01);
+                    $("#al2").val(data.addressLine02);
+                    $("#al3").val(data.addressLine03);
+                    $("#al4").val(data.addressLine04);
+                    $("#al5").val(data.addressLine05);
+                    $("#contactNo").val(data.contactNo);
+                    $("#email").val(data.email);
+                    $("#role").val(data.role);
+                    $("#fieldCode").val(data.fieldCode);
+                    $("#vehicleCode").val(data.vehicleCode);
+                },
+                error: function(xhr, status, error) {
+                    console.error("Error fetching field data:", error);
+                    alert("Failed to load field data.");
+                }
+            });
+        } else {
+            alert("Please enter a valid field code.");
+        }
+    });
+
     // AJAX request to fetch all staff ids
     $.ajax({
         url: "http://localhost:5050/fcw/api/v1/staff",
@@ -172,6 +212,7 @@ $(document).ready(function () {
                 alert("Staff member not deleted.");
             }
         });
+        clearFields()
     });
 
     ///////////////////////////////////////Update/////////////////////////////////////////////

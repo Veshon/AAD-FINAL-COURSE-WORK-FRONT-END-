@@ -112,16 +112,94 @@ $(document).ready(function () {
             processData: false, // Important: prevent jQuery from processing the data
             contentType: false, // Important: prevent jQuery from setting Content-Type header
             success: function(response) {
-                alert("Crop saved successfully!");
-            },
+                Swal.fire({
+                    title: "Good job!",
+                    text: "You clicked the button!",
+                    icon: "success"
+                });            },
             error: function(xhr, status, error) {
                 console.error("Error saving crops", error);
-                alert("Failed to save crop.");
+                Swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    text: "Something went wrong!",
+                });
             }
         });
     });
 
 ///////////////////////////////////////Delete/////////////////////////////////////////////
+
+    $("#delete").click(function(event) {
+        event.preventDefault();
+
+        let code = $("#cropCode").val();
+        console.log(code);
+
+        const cropData = {
+            cusId: code,
+        };
+
+        console.log(cropData);
+        const cropJSON = JSON.stringify(cropData);
+        console.log(cropJSON);
+
+        // SweetAlert2 confirmation dialog
+        const swalWithBootstrapButtons = Swal.mixin({
+            customClass: {
+                confirmButton: "btn btn-success",
+                cancelButton: "btn btn-danger"
+            },
+            buttonsStyling: false
+        });
+        swalWithBootstrapButtons.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonText: "Yes, delete it!",
+            cancelButtonText: "No, cancel!",
+            reverseButtons: true
+        }).then((result) => {
+            if (result.isConfirmed) {
+                swalWithBootstrapButtons.fire({
+                    title: "Deleted!",
+                    text: "Your file has been deleted.",
+                    icon: "success"
+                });
+            } else if (
+                /* Read more about handling dismissals below */
+                result.dismiss === Swal.DismissReason.cancel
+            ) {
+                swalWithBootstrapButtons.fire({
+                    title: "Cancelled",
+                    text: "Your imaginary file is safe :)",
+                    icon: "error"
+                });
+            }
+
+        }).then((result) => {
+            if (result.isConfirmed) {
+                $.ajax({
+                    url: "http://localhost:5050/fcw/api/v1/crops/" + code,
+                    type: "DELETE",
+                    headers: { "Content-Type": "application/json" },
+                    success: function(response) {
+                        alert("Crop deleted successfully!");
+                        clearFields(); // Clear fields only after successful deletion
+                    },
+                    error: function(xhr, status, error) {
+                        console.error("Error deleting crop:", error);
+                        alert("Failed to delete crop.");
+                    }
+                });
+            } else {
+                console.log("Crop deletion canceled.");
+            }
+        });
+    });
+
+/*///////////////////////////////////////Delete/////////////////////////////////////////////
     $("#delete").click(function(event) {
         event.preventDefault();
 
@@ -151,7 +229,7 @@ $(document).ready(function () {
             }
         });
         clearFields()
-    });
+    });*/
 
 /////////////////////////////////////Update///////////////////////////////////////////
     $("#update").click(function(event) {

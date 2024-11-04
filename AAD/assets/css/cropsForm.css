@@ -191,23 +191,3 @@
     display: none;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
-
-.my-title-class {
-    text-align: center;  /* Center title text */
-    font-weight: bold;   /* Make title bold */
-    color: red;          /* Custom color for title */
-}
-
-.my-content-class {
-    text-align: left;    /* Align content to the left */
-    font-size: 16px;     /* Custom font size */
-    color: blue;         /* Custom color for content */
-    width: 400px;
-    height: 200px;
-}
-
-.my-popup-class {
-
-    background-color: #f9f9f9; /* Custom background color */
-    border-radius: 10px;       /* Custom border radius */
-}

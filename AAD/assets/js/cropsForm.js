@@ -116,7 +116,8 @@ $(document).ready(function () {
                     title: "Good job!",
                     text: "You clicked the button!",
                     icon: "success"
-                });            },
+                });
+            },
             error: function(xhr, status, error) {
                 console.error("Error saving crops", error);
                 Swal.fire({
@@ -145,39 +146,13 @@ $(document).ready(function () {
         console.log(cropJSON);
 
         // SweetAlert2 confirmation dialog
-        const swalWithBootstrapButtons = Swal.mixin({
-            customClass: {
-                confirmButton: "btn btn-success",
-                cancelButton: "btn btn-danger"
-            },
-            buttonsStyling: false
-        });
-        swalWithBootstrapButtons.fire({
-            title: "Are you sure?",
+        Swal.fire({
+            title: 'Are you sure?',
             text: "You won't be able to revert this!",
-            icon: "warning",
+            icon: 'warning',
             showCancelButton: true,
-            confirmButtonText: "Yes, delete it!",
-            cancelButtonText: "No, cancel!",
-            reverseButtons: true
-        }).then((result) => {
-            if (result.isConfirmed) {
-                swalWithBootstrapButtons.fire({
-                    title: "Deleted!",
-                    text: "Your file has been deleted.",
-                    icon: "success"
-                });
-            } else if (
-                /* Read more about handling dismissals below */
-                result.dismiss === Swal.DismissReason.cancel
-            ) {
-                swalWithBootstrapButtons.fire({
-                    title: "Cancelled",
-                    text: "Your imaginary file is safe :)",
-                    icon: "error"
-                });
-            }
-
+            confirmButtonText: 'Yes, delete it!',
+            cancelButtonText: 'No, cancel!',
         }).then((result) => {
             if (result.isConfirmed) {
                 $.ajax({
@@ -185,7 +160,6 @@ $(document).ready(function () {
                     type: "DELETE",
                     headers: { "Content-Type": "application/json" },
                     success: function(response) {
-                        alert("Crop deleted successfully!");
                         clearFields(); // Clear fields only after successful deletion
                     },
                     error: function(xhr, status, error) {

@@ -1,5 +1,47 @@
 $(document).ready(function () {
 
+    $("#load").click(function(event) {
+        event.preventDefault();
+
+        let selectedFieldCode = $("#eId").val(); // Get the selected field code from input or dropdown
+
+        if (selectedFieldCode) {
+            // AJAX request to get field data
+            $.ajax({
+                url: "http://localhost:5050/fcw/api/v1/equipments/" + selectedFieldCode,
+                type: "GET",
+                contentType: "application/json",
+                success: function(data) {
+                    // Populate the form fields with the received data
+                    $("#eName").val(data.name);
+                    $("#type").val(data.type);
+                    $("#status").val(data.status);
+                    $("#sDetails").val(data.staffId);
+                    $("#fDetails").val(data.fieldCode);
+
+                    // Display base64 images as previews
+                    if (data.fieldImage1) {
+                        $("#img1Preview").attr("src", "data:image/jpeg;base64," + data.fieldImage1);
+                    } else {
+                        $("#img1Preview").attr("src", ""); // Clear if no image
+                    }
+
+                    if (data.fieldImage2) {
+                        $("#img2Preview").attr("src", "data:image/jpeg;base64," + data.fieldImage2);
+                    } else {
+                        $("#img2Preview").attr("src", ""); // Clear if no image
+                    }
+                },
+                error: function(xhr, status, error) {
+                    console.error("Error fetching equipment data:", error);
+                    alert("Failed to load equipment data.");
+                }
+            });
+        } else {
+            alert("Please enter a valid equipment code.");
+        }
+    });
+
     // AJAX request to fetch all equipment ids
     $.ajax({
         url: "http://localhost:5050/fcw/api/v1/equipments",

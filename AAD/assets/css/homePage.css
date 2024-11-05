@@ -31,7 +31,7 @@
     top: 300px;
     bottom: 0;
     right: 0;
-    left: 0;
+    left: 200px;
     margin: auto;
     background-image: url("logsBackground.jpg");
     background-size: cover;
@@ -39,12 +39,22 @@
     background-repeat: no-repeat;
 }
 
-/*#logsPage>img{
+#reportsForm{
     width: 150px;
     height: 25px;
     border-radius: 20px;
+    position: absolute;
+    top: 300px;
+    bottom: 0;
+    right: 0;
+    left: -200px;
+    margin: auto;
+    background-image: url("reportsFormBackgroung.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
 
-}*/
 
 #homeBtn>a>button{
     width: fit-content;

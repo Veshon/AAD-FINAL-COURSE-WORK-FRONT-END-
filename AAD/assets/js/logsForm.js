@@ -173,6 +173,46 @@ $(document).ready(function () {
         });
     });
 
+    /////////////////////////////////////Update///////////////////////////////////////////
+    $("#update").click(function(event) {
+        event.preventDefault();
+
+        let lCode = $("#logCode").val();
+        let date = $("#logDate").val();
+        let lDetails = $("#logDetails").val();
+        let lImg = $("#logImg")[0].files[0]; // Access the file input's first file
+        let fCode = $("#fieldCodes").val();
+        let cCode = $("#cropCode").val();
+        let sId = $("#staffId").val();
+
+        // Create a FormData object to hold the form data
+        let formData = new FormData();
+        formData.append("logCode", lCode);
+        formData.append("logDate", date);
+        formData.append("logDetails", lDetails);
+        formData.append("observedImage", lImg); // Append the second image file
+        formData.append("fieldCode", fCode); // Append the first image file
+        formData.append("cropCode", cCode); // Append the second image file
+        formData.append("staffId", sId);
+
+        // Send AJAX request
+        $.ajax({
+            url: "http://localhost:5050/fcw/api/v1/logs/"+lCode,
+            type: "PUT",
+            data: formData,
+            processData: false, // Important: prevent jQuery from processing the data
+            contentType: false, // Important: prevent jQuery from setting Content-Type header
+            success: function(response) {
+                alert("Log updated successfully!");
+                clearFields()
+            },
+            error: function(xhr, status, error) {
+                console.error("Error update log:", error);
+                alert("Failed to update log.");
+            }
+        });
+    });
+
     ///////////////////////////////////////Delete/////////////////////////////////////////////
 
     $("#delete").click(function(event) {

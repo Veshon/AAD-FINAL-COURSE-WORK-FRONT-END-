@@ -1,0 +1,116 @@
+#heading{
+    position: absolute;
+    top: 0;
+    left: 350px;
+    font-family: Calibri;
+    font-weight: bold;
+    color: #F5C584;
+    /*text-shadow: 0px 3px 5px rgba(185, 143, 90, 1);*/
+}
+
+#fieldHeading{
+    position: absolute;
+    top: 55px;
+    left: 50px;
+    font-family: Calibri;
+    font-size: 17px;
+    font-weight: bold;
+    color: #F5C584;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#staffTable {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+
+#staffTable th div {
+    display: inline-block;
+    padding: 10px;
+    position: relative;
+}
+
+.resize-handle {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 10px; /* Width of the handle */
+    height: 100%;
+    cursor: col-resize;
+    z-index: 1;
+}
+/* Ensure the table layout is fixed */
+#table {
+    table-layout: fixed; /* Fixed layout to respect specified widths */
+    width: 100%; /* Full width */
+    border-collapse: collapse; /* Remove spacing between cells */
+}
+
+#staffTable {
+    table-layout: fixed; /* Fixed layout to respect specified widths */
+    width: 100%; /* Full width */
+    border-collapse: collapse; /* Remove spacing between cells */
+}
+
+/* Style for all table cells */
+td, th {
+    border: 1px solid #ddd; /* Border for visibility */
+    padding: 4px; /* Add padding */
+    text-align: center; /* Center text in cells */
+    overflow: hidden; /* Prevent overflow */
+    white-space: nowrap; /* Prevent text wrapping */
+    text-overflow: ellipsis; /* Show ellipsis for overflowing text */
+}
+
+#table {
+    table-layout: fixed;
+    max-width: 700px;
+    width: 700px;
+    height: 200px;
+    font-size: 10px;
+    position: absolute;
+    top: 100px;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+}
+
+#staffTable {
+    table-layout: fixed;
+    max-width: 700px;
+    width: 400px;
+    height: 200px;
+    font-size: 10px;
+    position: absolute;
+    top: 500px;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+}
+
+th{
+    max-width: fit-content(50px);
+    width: 50px;
+    height: 50px;
+    font-weight: bold;
+}
+
+thead{
+    max-width: fit-content(50px);
+    width: 50px;
+    height: 50px;
+}
+
+#td {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 10px;
+}

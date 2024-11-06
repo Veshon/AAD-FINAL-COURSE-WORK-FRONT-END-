@@ -1,5 +1,41 @@
 $(document).ready(function () {
 
+    $("#load").click(function(event) {
+        event.preventDefault();
+
+        let selectedFieldCode = $("#logCode").val(); // Get the selected field code from input or dropdown
+
+        if (selectedFieldCode) {
+            // AJAX request to get field data
+            $.ajax({
+                url: "http://localhost:5050/fcw/api/v1/logs/" + selectedFieldCode,
+                type: "GET",
+                contentType: "application/json",
+                success: function(data) {
+                    // Populate the form fields with the received data
+                    $("#logDate").val(data.logDate);
+                    $("#logDetails").val(data.logDetails);
+                    $("#fieldCodes").val(data.fieldCode);
+                    $("#cropCode").val(data.cropCode);
+                    $("#staffId").val(data.staffId);
+
+                    // Display base64 images as previews
+                    if (data.observedImage) {
+                        $("#img1Preview").attr("src", "data:image/jpeg;base64," + data.observedImage);
+                    } else {
+                        $("#img1Preview").attr("src", ""); // Clear if no image
+                    }
+                },
+                error: function(xhr, status, error) {
+                    console.error("Error fetching log data:", error);
+                    alert("Failed to load log data.");
+                }
+            });
+        } else {
+            alert("Please enter a valid log code.");
+        }
+    });
+
     // AJAX request to fetch all log codes
     $.ajax({
         url: "http://localhost:5050/fcw/api/v1/logs",

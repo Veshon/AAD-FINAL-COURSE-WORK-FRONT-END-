@@ -176,13 +176,19 @@ $(document).ready(function () {
             // processData: false, // Important: prevent jQuery from processing the data
             headers: { "Content-Type": "application/json" },
             success: function(response) {
-                alert("Staff member saved successfully!");
-                clearFields()
+                Swal.fire({
+                    title: "Saved!",
+                    text: "Staff member saved successfully!",
+                    icon: "success"
+                });                clearFields()
             },
             error: function(xhr, status, error) {
                 console.error("Error saving staff member:", error);
-                alert("Staff member not saved.");
-            }
+                Swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    text: "Error saving staff member!",
+                });            }
         });
     });
 
@@ -206,12 +212,20 @@ $(document).ready(function () {
             type: "DELETE",
             headers: { "Content-Type": "application/json" },
             success: function(response) {
-                alert("Staff member deleted successfully!");
+                Swal.fire({
+                    title: "Deleted!",
+                    text: "Staff member deleted successfully!",
+                    icon: "success"
+                });
                 clearFields()
             },
             error: function(xhr, status, error) {
                 console.error("Error deleting staff member:", error);
-                alert("Staff member not deleted.");
+                Swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    text: "Error deleting staff member!",
+                });
             }
         });
     });
@@ -285,12 +299,19 @@ $(document).ready(function () {
             // processData: false, // Important: prevent jQuery from processing the data
             headers: { "Content-Type": "application/json" },
             success: function(response) {
-                alert("Staff member updated successfully!");
-                clearFields()
+                Swal.fire({
+                    title: "Updated!",
+                    text: "Staff member updated successfully!",
+                    icon: "success"
+                });                clearFields()
             },
             error: function(xhr, status, error) {
                 console.error("Error updating staff member:", error);
-                alert("Staff member not updated.");
+                Swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    text: "Error updating staff member!"+firstNameE,
+                });
             }
         });
     });

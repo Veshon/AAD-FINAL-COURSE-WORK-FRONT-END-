@@ -25,3 +25,31 @@ $.ajax({
         alert("Failed to load field data.");
     }
 });
+
+$.ajax({
+    url: "http://localhost:5050/fcw/api/v1/vehicles",
+    type: "GET",
+    dataType: "json",
+    success: function(data) {
+        let tbody = $("#tableVehicle tbody"); // Select the tbody of the table
+        tbody.empty(); // Clear any existing rows
+            // Loop through the data and create a new row for each log entry
+        data.forEach(function(log) {
+            // Create a new row
+            let row = $("<tr></tr>");
+            // Add cells for each log property
+            row.append($("<td></td>").text(log.vehicleCode));
+            row.append($("<td></td>").text(log.licensePlateNumber));
+            row.append($("<td></td>").text(log.vehicleCategory));
+            row.append($("<td></td>").text(log.fuelType));
+            row.append($("<td></td>").text(log.status));
+            row.append($("<td></td>").text(log.remarks));
+
+                // Append the row to the tbody
+            tbody.append(row);
+        });},
+    error: function(xhr, status, error) {
+        console.error("Error loading vehicle data:", error);
+        alert("Failed to load vehicle data.");
+    }
+});

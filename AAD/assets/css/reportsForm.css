@@ -18,6 +18,16 @@
     color: #F5C584;
 }
 
+#vehicleHeading{
+    position: absolute;
+    top: 400px;
+    left: 50px;
+    font-family: Calibri;
+    font-size: 17px;
+    font-weight: bold;
+    color: #F5C584;
+}
+
 .table {
     width: 100%;
     border-collapse: collapse;
@@ -113,4 +123,18 @@ thead{
     overflow: hidden;
     text-overflow: ellipsis;
     font-size: 10px;
+}
+
+#tableVehicle {
+    table-layout: fixed;
+    max-width: 700px;
+    width: 700px;
+    height: 200px;
+    font-size: 10px;
+    position: absolute;
+    top: 525px;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
 }

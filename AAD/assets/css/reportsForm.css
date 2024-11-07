@@ -10,7 +10,7 @@
 
 #fieldHeading{
     position: absolute;
-    top: 50px;
+    top: 150px;
     left: 50px;
     font-family: Calibri;
     font-size: 17px;
@@ -20,7 +20,7 @@
 
 #vehicleHeading{
     position: absolute;
-    top: 925px;
+    top: 1070px;
     left: 50px;
     font-family: Calibri;
     font-size: 17px;
@@ -30,7 +30,7 @@
 
 #equipmentHeading{
     position: absolute;
-    top: 670px;
+    top: 760px;
     left: 50px;
     font-family: Calibri;
     font-size: 17px;
@@ -40,7 +40,7 @@
 
 #cropHeading{
     position: absolute;
-    top: 395px;
+    top: 500px;
     left: 50px;
     font-family: Calibri;
     font-size: 17px;
@@ -50,7 +50,7 @@
 
 #staffHeading{
     position: absolute;
-    top: 1180px;
+    top: 1375px;
     left: 50px;
     font-family: Calibri;
     font-size: 17px;
@@ -115,7 +115,7 @@ td, th {
     height: 200px;
     font-size: 10px;
     position: absolute;
-    top: 100px;
+    top: 300px;
     bottom: 0;
     right: 0;
     left: 0;
@@ -129,7 +129,7 @@ td, th {
     height: 200px;
     font-size: 10px;
     position: absolute;
-    top: 1300px;
+    top: 1500px;
     bottom: 0;
     right: 0;
     left: 0;
@@ -163,7 +163,7 @@ thead{
     height: 200px;
     font-size: 10px;
     position: absolute;
-    top: 1050px;
+    top: 1200px;
     bottom: 0;
     right: 0;
     left: 0;
@@ -177,7 +177,7 @@ thead{
     height: 200px;
     font-size: 10px;
     position: absolute;
-    top: 800px;
+    top: 890px;
     bottom: 0;
     right: 0;
     left: 0;
@@ -191,9 +191,53 @@ thead{
     height: 200px;
     font-size: 10px;
     position: absolute;
-    top: 525px;
+    top: 630px;
     bottom: 0;
     right: 0;
     left: 0;
     margin: auto;
+}
+
+#buttons{
+    display: flex;
+    gap: 10px;
+    position: absolute;
+    top: 70px;
+    bottom: 0;
+    right: 0;
+    left: 200px;
+}
+
+#buttons button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+#buttons>a>button{
+    width: 70px;
+    height: 30px;
+    font-size: 12px;
+    font-family: Calibri;
+    font-weight: bold;
+    border-radius: 20px;
+    border-color: #DCBB8C;
+    background-color: #DCBB8C;
+    color: white;
+    font-weight: bold;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+#buttons>a>button:hover{
+    background-color: #C9A174;
+    border-color: #C9A174;
+}
+
+#buttons>a>button:active{
+    background-color: #DCBB8C;
+}
+
+#buttons>a{
+    text-decoration: none;
 }

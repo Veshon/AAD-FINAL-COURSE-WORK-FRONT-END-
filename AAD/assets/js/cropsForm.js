@@ -119,11 +119,11 @@ $(document).ready(function () {
                 });
             },
             error: function(xhr, status, error) {
-                console.error("Error saving crops", error);
+                console.error("Error saving crop", error);
                 Swal.fire({
                     icon: "error",
                     title: "Oops...",
-                    text: "Something went wrong!",
+                    text: "Error saving crop!",
                 });
             }
         });
@@ -164,8 +164,12 @@ $(document).ready(function () {
                         clearFields()
                     },
                     error: function(xhr, status, error) {
-                        console.error("Error deleting crop:", error);
-                        alert("Failed to delete crop.");
+                        console.error("Error saving crop", error);
+                        Swal.fire({
+                            icon: "error",
+                            title: "Oops...",
+                            text: "Error deleting crop!",
+                        });
                     }
                 });
             } else {
@@ -241,8 +245,12 @@ $(document).ready(function () {
                 clearFields()
             },
             error: function(xhr, status, error) {
-                console.error("Error update crop:", error);
-                alert("Failed to update crop.");
+                console.error("Error updating crop", error);
+                Swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    text: "Error updating crop!",
+                });
             }
         });
     });

@@ -146,12 +146,20 @@ $(document).ready(function () {
             // processData: false, // Important: prevent jQuery from processing the data
             headers: { "Content-Type": "application/json" },
             success: function(response) {
-                alert("Equipment saved successfully!");
+                Swal.fire({
+                    title: "Saved!",
+                    text: "Equipment saved successfully!",
+                    icon: "success"
+                });
                 clearFields()
             },
             error: function(xhr, status, error) {
                 console.error("Error saving Equipment:", error);
-                alert("Equipment not saved.");
+                Swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    text: "Error saving equipment!",
+                });
             }
         });
     });
@@ -176,13 +184,20 @@ $(document).ready(function () {
             type: "DELETE",
             headers: { "Content-Type": "application/json" },
             success: function(response) {
-                alert("Equipment deleted successfully!");
+                Swal.fire({
+                    title: "Deleted!",
+                    text: "Equipment deleted successfully!",
+                    icon: "success"
+                });
                 clearFields()
             },
             error: function(xhr, status, error) {
                 console.error("Error deleting Equipment:", error);
-                alert("Equipment not deleted.");
-            }
+                Swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    text: "Error deleting equipment!",
+                });            }
         });
         clearFields()
     });
@@ -225,13 +240,20 @@ $(document).ready(function () {
             // processData: false, // Important: prevent jQuery from processing the data
             headers: { "Content-Type": "application/json" },
             success: function(response) {
-                alert("Equipment updated successfully!");
+                Swal.fire({
+                    title: "Updated!",
+                    text: "Equipment updated successfully!",
+                    icon: "success"
+                });
                 clearFields()
             },
             error: function(xhr, status, error) {
                 console.error("Error updating Equipment:", error);
-                alert("Equipment not updated.");
-            }
+                Swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    text: "Error updating equipment!",
+                });            }
         });
     });
 

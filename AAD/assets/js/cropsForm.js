@@ -160,7 +160,11 @@ $(document).ready(function () {
                     type: "DELETE",
                     headers: { "Content-Type": "application/json" },
                     success: function(response) {
-                        clearFields(); // Clear fields only after successful deletion
+                        Swal.fire({
+                            title: "Saved!",
+                            text: "Crop deleted successfully!",
+                            icon: "success"
+                        });
                         clearFields()
                     },
                     error: function(xhr, status, error) {
@@ -241,7 +245,11 @@ $(document).ready(function () {
             processData: false, // Important: prevent jQuery from processing the data
             contentType: false, // Important: prevent jQuery from setting Content-Type header
             success: function(response) {
-                alert("Crop update successfully!");
+                Swal.fire({
+                    title: "Saved!",
+                    text: "Crop updated successfully!",
+                    icon: "success"
+                });
                 clearFields()
             },
             error: function(xhr, status, error) {

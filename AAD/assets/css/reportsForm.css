@@ -10,7 +10,7 @@
 
 #fieldHeading{
     position: absolute;
-    top: 55px;
+    top: 50px;
     left: 50px;
     font-family: Calibri;
     font-size: 17px;
@@ -20,7 +20,37 @@
 
 #vehicleHeading{
     position: absolute;
-    top: 400px;
+    top: 925px;
+    left: 50px;
+    font-family: Calibri;
+    font-size: 17px;
+    font-weight: bold;
+    color: #F5C584;
+}
+
+#equipmentHeading{
+    position: absolute;
+    top: 670px;
+    left: 50px;
+    font-family: Calibri;
+    font-size: 17px;
+    font-weight: bold;
+    color: #F5C584;
+}
+
+#cropHeading{
+    position: absolute;
+    top: 395px;
+    left: 50px;
+    font-family: Calibri;
+    font-size: 17px;
+    font-weight: bold;
+    color: #F5C584;
+}
+
+#staffHeading{
+    position: absolute;
+    top: 1180px;
     left: 50px;
     font-family: Calibri;
     font-size: 17px;
@@ -54,6 +84,7 @@
     cursor: col-resize;
     z-index: 1;
 }
+
 /* Ensure the table layout is fixed */
 #table {
     table-layout: fixed; /* Fixed layout to respect specified widths */
@@ -98,7 +129,7 @@ td, th {
     height: 200px;
     font-size: 10px;
     position: absolute;
-    top: 500px;
+    top: 1300px;
     bottom: 0;
     right: 0;
     left: 0;
@@ -126,6 +157,34 @@ thead{
 }
 
 #tableVehicle {
+    table-layout: fixed;
+    max-width: 700px;
+    width: 700px;
+    height: 200px;
+    font-size: 10px;
+    position: absolute;
+    top: 1050px;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+}
+
+#equipmentTable {
+    table-layout: fixed;
+    max-width: 700px;
+    width: 700px;
+    height: 200px;
+    font-size: 10px;
+    position: absolute;
+    top: 800px;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+}
+
+#cropsTable {
     table-layout: fixed;
     max-width: 700px;
     width: 700px;

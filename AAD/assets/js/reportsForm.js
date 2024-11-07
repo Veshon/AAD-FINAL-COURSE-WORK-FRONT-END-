@@ -22,8 +22,11 @@ $.ajax({
         });},
     error: function(xhr, status, error) {
         console.error("Error loading field data:", error);
-        alert("Failed to load field data.");
-    }
+        Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Error loading fields data!",
+        });    }
 });
 
 $.ajax({
@@ -50,8 +53,11 @@ $.ajax({
         });},
     error: function(xhr, status, error) {
         console.error("Error loading vehicle data:", error);
-        alert("Failed to load vehicle data.");
-    }
+        Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Error loading vehicles data!",
+        });    }
 });
 
 $.ajax({
@@ -78,8 +84,11 @@ $.ajax({
         });},
     error: function(xhr, status, error) {
         console.error("Error loading vehicle data:", error);
-        alert("Failed to load vehicle data.");
-    }
+        Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Error loading equipments data!",
+        });    }
 });
 
 $.ajax({
@@ -107,8 +116,11 @@ $.ajax({
         });},
     error: function(xhr, status, error) {
         console.error("Error loading crop data:", error);
-        alert("Failed to load crop data.");
-    }
+        Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Error loading crops data!",
+        });    }
 });
 
 $.ajax({
@@ -146,6 +158,10 @@ $.ajax({
         });},
     error: function(xhr, status, error) {
         console.error("Error loading staff data:", error);
-        alert("Failed to load staff data.");
+        Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Error loading staff data!",
+        });
     }
 });

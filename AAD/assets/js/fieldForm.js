@@ -172,12 +172,20 @@ $(document).ready(function () {
             processData: false, // Important: prevent jQuery from processing the data
             contentType: false, // Important: prevent jQuery from setting Content-Type header
             success: function(response) {
-                alert("Field saved successfully!");
+                Swal.fire({
+                    title: "Saved!",
+                    text: "Field saved successfully!",
+                    icon: "success"
+                });
                 clearFields()
             },
             error: function(xhr, status, error) {
                 console.error("Error saving field:", error);
-                alert("Failed to save field.");
+                Swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    text: "Error saving field!",
+                });
             }
         });
     });
@@ -204,13 +212,19 @@ $(document).ready(function () {
             type: "DELETE",
             headers: { "Content-Type": "application/json" },
             success: function(response) {
-                alert("Field deleted successfully!");
-                clearFields()
+                Swal.fire({
+                    title: "Deleted!",
+                    text: "Field deleted successfully!",
+                    icon: "success"
+                });                clearFields()
             },
             error: function(xhr, status, error) {
                 console.error("Error saving field:", error);
-                alert("Failed to delete field.");
-            }
+                Swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    text: "Error deleting crop!",
+                });            }
         });
     });
 
@@ -242,12 +256,19 @@ $(document).ready(function () {
             processData: false, // Important: prevent jQuery from processing the data
             contentType: false, // Important: prevent jQuery from setting Content-Type header
             success: function(response) {
-                alert("Field update successfully!");
-                clearFields()
+                Swal.fire({
+                    title: "Updated!",
+                    text: "Field updated successfully!",
+                    icon: "success"
+                });                clearFields()
             },
             error: function(xhr, status, error) {
                 console.error("Error update field:", error);
-                alert("Failed to update field.");
+                Swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    text: "Error updating crop!",
+                });
             }
         });
     });

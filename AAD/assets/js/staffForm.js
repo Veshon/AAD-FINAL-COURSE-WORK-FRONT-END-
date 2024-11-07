@@ -180,7 +180,8 @@ $(document).ready(function () {
                     title: "Saved!",
                     text: "Staff member saved successfully!",
                     icon: "success"
-                });                clearFields()
+                });
+                clearFields()
             },
             error: function(xhr, status, error) {
                 console.error("Error saving staff member:", error);
@@ -303,14 +304,15 @@ $(document).ready(function () {
                     title: "Updated!",
                     text: "Staff member updated successfully!",
                     icon: "success"
-                });                clearFields()
+                });
+                clearFields()
             },
             error: function(xhr, status, error) {
                 console.error("Error updating staff member:", error);
                 Swal.fire({
                     icon: "error",
                     title: "Oops...",
-                    text: "Error updating staff member!"+firstNameE,
+                    text: "Error updating staff member!",
                 });
             }
         });

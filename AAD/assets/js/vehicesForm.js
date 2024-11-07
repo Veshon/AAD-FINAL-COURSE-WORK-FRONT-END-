@@ -115,12 +115,20 @@ $(document).ready(function () {
             // processData: false, // Important: prevent jQuery from processing the data
             headers: { "Content-Type": "application/json" },
             success: function(response) {
-                alert("Vehicle saved successfully!");
+                Swal.fire({
+                    title: "Saved!",
+                    text: "Vehicle saved successfully!",
+                    icon: "success"
+                });
                 clearFields()
             },
             error: function(xhr, status, error) {
                 console.error("Error saving vehicle:", error);
-                alert("Vehicle not saved.");
+                Swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    text: "Error saving vehicle!",
+                });
             }
         });
     });
@@ -145,11 +153,18 @@ $(document).ready(function () {
             type: "DELETE",
             headers: { "Content-Type": "application/json" },
             success: function(response) {
-                alert("Vehicle deleted successfully!");
-            },
+                Swal.fire({
+                    title: "Deleted!",
+                    text: "Vehicle saved successfully!",
+                    icon: "success"
+                });            },
             error: function(xhr, status, error) {
                 console.error("Error deleting vehicle:", error);
-                alert("Vehicle not deleted.");
+                Swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    text: "Error deleting vehicle!",
+                });
                 clearFields()
             }
         });
@@ -197,12 +212,19 @@ $(document).ready(function () {
             // processData: false, // Important: prevent jQuery from processing the data
             headers: { "Content-Type": "application/json" },
             success: function(response) {
-                alert("Vehicle updated successfully!");
-                clearFields()
+                Swal.fire({
+                    title: "Updated!",
+                    text: "Vehicle saved successfully!",
+                    icon: "success"
+                });                clearFields()
             },
             error: function(xhr, status, error) {
                 console.error("Error updating vehicle:", error);
-                alert("Vehicle not updated.");
+                Swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    text: "Error updating vehicle!",
+                });
             }
         });
     });

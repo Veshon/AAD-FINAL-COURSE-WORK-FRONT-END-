@@ -1,5 +1,8 @@
 $(document).ready(function () {
 
+    const jwtToken = localStorage.getItem("jwtToken");
+    console.log(jwtToken)
+
     $("#load").click(function(event) {
         event.preventDefault();
 
@@ -11,6 +14,9 @@ $(document).ready(function () {
                 url: "http://localhost:5050/fcw/api/v1/vehicles/" + selectedFieldCode,
                 type: "GET",
                 contentType: "application/json",
+                headers: {
+                    "Authorization": `Bearer ${jwtToken}` // Add token to Authorization header
+                },
                 success: function(data) {
                     // Populate the form fields with the received data
                     $("#licensePlateNo").val(data.licensePlateNumber);
@@ -36,6 +42,9 @@ $(document).ready(function () {
         url: "http://localhost:5050/fcw/api/v1/vehicles",
         type: "GET",
         dataType: "json",
+        headers: {
+            "Authorization": `Bearer ${jwtToken}` // Add token to Authorization header
+        },
         success: function(data) {
             let select = $("#vehicleCode");
             select.empty(); // Clear existing options if any
@@ -59,6 +68,9 @@ $(document).ready(function () {
         url: "http://localhost:5050/fcw/api/v1/staff",
         type: "GET",
         dataType: "json",
+        headers: {
+            "Authorization": `Bearer ${jwtToken}` // Add token to Authorization header
+        },
         success: function(data) {
             let select = $("#sDetails");
             select.empty(); // Clear existing options if any
@@ -113,7 +125,7 @@ $(document).ready(function () {
             type: "POST",
             data: vehicleJSON,
             // processData: false, // Important: prevent jQuery from processing the data
-            headers: { "Content-Type": "application/json" },
+            headers: { "Content-Type": "application/json", "Authorization": `Bearer ${jwtToken}`},
             success: function(response) {
                 Swal.fire({
                     title: "Saved!",
@@ -151,7 +163,7 @@ $(document).ready(function () {
         $.ajax({
             url: "http://localhost:5050/fcw/api/v1/vehicles/" + code,
             type: "DELETE",
-            headers: { "Content-Type": "application/json" },
+            headers: { "Content-Type": "application/json", "Authorization": `Bearer ${jwtToken}`},
             success: function(response) {
                 Swal.fire({
                     title: "Deleted!",
@@ -210,7 +222,7 @@ $(document).ready(function () {
             type: "PUT",
             data: vehicleJSON,
             // processData: false, // Important: prevent jQuery from processing the data
-            headers: { "Content-Type": "application/json" },
+            headers: { "Content-Type": "application/json", "Authorization": `Bearer ${jwtToken}`},
             success: function(response) {
                 Swal.fire({
                     title: "Updated!",

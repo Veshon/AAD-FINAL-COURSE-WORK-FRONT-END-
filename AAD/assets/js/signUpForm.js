@@ -14,6 +14,7 @@ $(document).ready(function () {
         formData.append("role", role);
         formData.append("password", password);
         formData.append("email", email);
+
         // Send AJAX request
         $.ajax({
             url: "http://localhost:5050/fcw/api/v1/auth/signup",
@@ -28,17 +29,22 @@ $(document).ready(function () {
                 localStorage.setItem("jwtToken", jwtToken);
                 // Log the token to the console
                 console.log("JWT Token:", jwtToken);
+
                 Swal.fire({
                     title: "Saved!",
                     text: "User saved successfully!",
                     icon: "success"
+                }).then(() => {
+                    // Redirect to the home page after the alert is closed
+                    window.location.href = "index.html"; // Replace with your actual home page URL
                 });
-                clearFields()
+
+                clearFields();
             },
             error: function(xhr, status, error) {
                 console.error("Error saving user:", error);
                 alert("Failed to save user.");
-                clearFields()
+                clearFields();
             }
         });
     });

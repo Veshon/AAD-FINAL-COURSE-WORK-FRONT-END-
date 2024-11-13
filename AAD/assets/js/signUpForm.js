@@ -33,11 +33,22 @@ $(document).ready(function () {
                     text: "User saved successfully!",
                     icon: "success"
                 });
+                clearFields()
             },
             error: function(xhr, status, error) {
                 console.error("Error saving user:", error);
                 alert("Failed to save user.");
+                clearFields()
             }
         });
     });
 });
+
+function clearFields() {
+    document.getElementById('email').value = '';
+    document.getElementById('password').value = '';
+    document.getElementById('role').value = '';
+    document.getElementById('fName').value = '';
+    document.getElementById('lName').value = '';
+    document.getElementById('profilePic').value = '';
+}

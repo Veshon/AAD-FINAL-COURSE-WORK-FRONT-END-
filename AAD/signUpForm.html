@@ -23,15 +23,18 @@
     <div class="txtField">
         <input class="form-control form-control-sm" type="text" id="email" required placeholder="Email" aria-label=".form-control-sm example">
         <input class="form-control form-control-sm" type="password" id="password" required placeholder="Password" aria-label=".form-control-sm example">
-        <select  style="height: 25px;" class="form-control form-control-sm" type="text" id="role" required placeholder="Role" aria-label=".form-control-sm example">
+        <select  style="height: 25px; cursor: pointer;" class="form-control form-control-sm" type="text" id="role" required placeholder="Role" aria-label=".form-control-sm example">
             <option> Role </option>
+            <option value="MANAGER">Manager</option>
+            <option value="ADMIN">Admin</option>
+            <option value="SCIENTIST">Scientist</option>
         </select>
     </div>
 
     <div class="txtField2">
-        <input class="form-control form-control-sm" type="text" id="lName" required placeholder="Last name" aria-label=".form-control-sm example">
         <input class="form-control form-control-sm" type="text" id="fName" required placeholder="First name" aria-label=".form-control-sm example">
-        <input class="form-control form-control-sm" type="file" id="profilePic" required placeholder="Profile Picture" aria-label=".form-control-sm example">
+        <input class="form-control form-control-sm" type="text" id="lName" required placeholder="Last name" aria-label=".form-control-sm example">
+        <input style="cursor: pointer;" class="form-control form-control-sm" type="file" id="profilePic" required placeholder="Profile Picture" aria-label=".form-control-sm example">
     </div>
 
         <div id="allBtns">

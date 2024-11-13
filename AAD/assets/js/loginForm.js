@@ -39,7 +39,7 @@ $(document).ready(function () {
                     icon: "success"
                 }).then(() => {
                     // Redirect to the desired page after login
-                    // window.location.href = "index.html"; // Replace with your actual target page
+                    window.location.href = "index.html"; // Replace with your actual target page
                 });
             },
             error: function(xhr, status, error) {

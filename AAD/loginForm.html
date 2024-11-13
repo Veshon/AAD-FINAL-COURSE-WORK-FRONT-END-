@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="assets/css/loginForm.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="assets/js/loginForm.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
 </head>
 <body>
 
@@ -18,12 +20,11 @@
 
 <div id="allTxtFields">
     <div class="txtField">
-        <input class="form-control form-control-sm" type="text" placeholder="User Name" aria-label=".form-control-sm example">
-        <input class="form-control form-control-sm" type="password" placeholder="Password" aria-label=".form-control-sm example">
-        <input class="form-control form-control-sm" type="text" placeholder="Role" aria-label=".form-control-sm example">
+        <input class="form-control form-control-sm" id="email" type="text" placeholder="Email" aria-label=".form-control-sm example">
+        <input class="form-control form-control-sm" id="password" type="password" placeholder="Password" aria-label=".form-control-sm example">
 
         <div id="allBtns">
-            <a href="index.html"><button type="button" class="btn btn-success">Sign In</button></a>
+            <button type="button" id="loginButton" class="btn btn-success">Sign In</button>
         </div>
 
        <h6 id="signUp">If you don't have an account <a href="signUpForm.html" style="cursor: pointer">Sign up</a></h6>

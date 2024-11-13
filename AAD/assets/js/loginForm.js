@@ -1,4 +1,11 @@
 $(document).ready(function () {
+    // Check if the profile image is saved in localStorage
+    const profilePic = localStorage.getItem("profilePic");
+
+    if (profilePic) {
+        // If there is a profile picture saved, set it as the source of the img tag
+        $("#profileImage").attr("src", profilePic);  // Assuming your img tag has id="profileImage"
+    }
 
     // Retrieve the JWT token from localStorage (if it exists)
     const jwtToken = localStorage.getItem("jwtToken");
@@ -31,6 +38,10 @@ $(document).ready(function () {
 
                 // Print the newly created JWT token in the console
                 console.log("New JWT Token:", jwtToken);
+
+                // Remove the profile picture from localStorage and reset the img tag
+                localStorage.removeItem("profilePic");  // Remove profile picture from localStorage
+                $("#profileImage").attr("src", "");  // Clear the image displayed
 
                 // Show success message
                 Swal.fire({

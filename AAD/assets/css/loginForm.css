@@ -19,7 +19,7 @@
     max-width: fit-content;
     max-height: fit-content;
     position: absolute;
-    top: -40px;
+    top: 40px;
     bottom: 0;
     right: 0;
     left: 0;
@@ -72,7 +72,7 @@
 
 #blurBckgound {
     width: 210px;
-    height: 220px;
+    height: 250px;
     background-color: #607951;
     opacity: 80%;
     border-radius: 25px;
@@ -97,4 +97,25 @@
     right: 0;
     left: 30px;
     color: white;
+}
+
+#profilePic{
+    width: fit-content;
+    height: fit-content;
+    border-radius: 100%;
+    position: absolute;
+    top: -170px;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+}
+
+#profileImage {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow */
 }

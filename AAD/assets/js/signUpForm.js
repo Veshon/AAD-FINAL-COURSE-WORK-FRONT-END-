@@ -27,16 +27,23 @@ $(document).ready(function () {
                 const jwtToken = response.token;
                 // Store JWT token in localStorage
                 localStorage.setItem("jwtToken", jwtToken);
-                // Log the token to the console
-                console.log("JWT Token:", jwtToken);
+
+                // Store profile picture (base64 or URL)
+                if (profilePic) {
+                    const reader = new FileReader();
+                    reader.onloadend = function() {
+                        localStorage.setItem("profilePic", reader.result); // Store the base64 image data
+                    };
+                    reader.readAsDataURL(profilePic); // Convert image to base64 string
+                }
 
                 Swal.fire({
                     title: "Saved!",
                     text: "User saved successfully!",
                     icon: "success"
                 }).then(() => {
-                    // Redirect to the home page after the alert is closed
-                    window.location.href = "index.html"; // Replace with your actual home page URL
+                    // Redirect to the login page after the alert is closed
+                    window.location.href = "loginForm.html"; // Replace with your actual login page URL
                 });
 
                 clearFields();

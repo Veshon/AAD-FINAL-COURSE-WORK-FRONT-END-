@@ -1,5 +1,8 @@
 $(document).ready(function () {
 
+    const jwtToken = localStorage.getItem("jwtToken");
+    console.log(jwtToken)
+
     $("#load").click(function(event) {
         event.preventDefault();
 

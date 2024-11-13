@@ -1,5 +1,8 @@
 $(document).ready(function () {
 
+    const jwtToken = localStorage.getItem("jwtToken");
+    console.log(jwtToken)
+
     $("#load").click(function(event) {
         event.preventDefault();
 
@@ -11,6 +14,9 @@ $(document).ready(function () {
                 url: "http://localhost:5050/fcw/api/v1/logs/" + selectedFieldCode,
                 type: "GET",
                 contentType: "application/json",
+                headers: {
+                    "Authorization": `Bearer ${jwtToken}` // Add token to Authorization header
+                },
                 success: function(data) {
                     // Populate the form fields with the received data
                     $("#logDate").val(data.logDate);
@@ -41,6 +47,9 @@ $(document).ready(function () {
         url: "http://localhost:5050/fcw/api/v1/logs",
         type: "GET",
         dataType: "json",
+        headers: {
+            "Authorization": `Bearer ${jwtToken}` // Add token to Authorization header
+        },
         success: function(data) {
             let select = $("#logCode");
             select.empty(); // Clear existing options if any
@@ -65,6 +74,9 @@ $(document).ready(function () {
             url: "http://localhost:5050/fcw/api/v1/logs",
             type: "GET",
             dataType: "json",
+            headers: {
+                "Authorization": `Bearer ${jwtToken}` // Add token to Authorization header
+            },
             success: function(data) {
                 let tbody = $("#table tbody"); // Select the tbody of the table
                 tbody.empty(); // Clear any existing rows
@@ -104,6 +116,9 @@ $(document).ready(function () {
         url: "http://localhost:5050/fcw/api/v1/crops",
         type: "GET",
         dataType: "json",
+        headers: {
+            "Authorization": `Bearer ${jwtToken}` // Add token to Authorization header
+        },
         success: function(data) {
             let select = $("#cropCode");
             select.empty(); // Clear existing options if any
@@ -127,6 +142,9 @@ $(document).ready(function () {
         url: "http://localhost:5050/fcw/api/v1/fields",
         type: "GET",
         dataType: "json",
+        headers: {
+            "Authorization": `Bearer ${jwtToken}` // Add token to Authorization header
+        },
         success: function(data) {
             let select = $("#fieldCodes");
             select.empty(); // Clear existing options if any
@@ -150,6 +168,9 @@ $(document).ready(function () {
         url: "http://localhost:5050/fcw/api/v1/staff",
         type: "GET",
         dataType: "json",
+        headers: {
+            "Authorization": `Bearer ${jwtToken}` // Add token to Authorization header
+        },
         success: function(data) {
             let select = $("#staffId");
             select.empty(); // Clear existing options if any
@@ -195,6 +216,9 @@ $(document).ready(function () {
             data: formData,
             processData: false, // Important: prevent jQuery from processing the data
             contentType: false, // Important: prevent jQuery from setting Content-Type header
+            headers: {
+                "Authorization": `Bearer ${jwtToken}` // Add token to Authorization header
+            },
             success: function(response) {
                 Swal.fire({
                     title: "Saved!",
@@ -238,6 +262,9 @@ $(document).ready(function () {
             data: formData,
             processData: false, // Important: prevent jQuery from processing the data
             contentType: false, // Important: prevent jQuery from setting Content-Type header
+            headers: {
+                "Authorization": `Bearer ${jwtToken}` // Add token to Authorization header
+            },
             success: function(response) {
                 alert("Log updated successfully!");
                 clearFields()
@@ -278,7 +305,7 @@ $(document).ready(function () {
                 $.ajax({
                     url: "http://localhost:5050/fcw/api/v1/logs/" + code,
                     type: "DELETE",
-                    headers: { "Content-Type": "application/json" },
+                    headers: { "Content-Type": "application/json", "Authorization": `Bearer ${jwtToken}`},
                     success: function(response) {
                         clearFields(); // Clear fields only after successful deletion
                         clearFields()

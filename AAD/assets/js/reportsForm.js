@@ -1,7 +1,13 @@
+const jwtToken = localStorage.getItem("jwtToken");
+console.log(jwtToken)
+
 $.ajax({
     url: "http://localhost:5050/fcw/api/v1/fields",
     type: "GET",
     dataType: "json",
+    headers: {
+        "Authorization": `Bearer ${jwtToken}` // Add token to Authorization header
+    },
     success: function(data) {
         let tbody = $("#table tbody"); // Select the tbody of the table
         tbody.empty(); // Clear any existing rows
@@ -33,6 +39,9 @@ $.ajax({
     url: "http://localhost:5050/fcw/api/v1/vehicles",
     type: "GET",
     dataType: "json",
+    headers: {
+        "Authorization": `Bearer ${jwtToken}` // Add token to Authorization header
+    },
     success: function(data) {
         let tbody = $("#tableVehicle tbody"); // Select the tbody of the table
         tbody.empty(); // Clear any existing rows
@@ -64,6 +73,9 @@ $.ajax({
     url: "http://localhost:5050/fcw/api/v1/equipments",
     type: "GET",
     dataType: "json",
+    headers: {
+        "Authorization": `Bearer ${jwtToken}` // Add token to Authorization header
+    },
     success: function(data) {
         let tbody = $("#equipmentTable tbody"); // Select the tbody of the table
         tbody.empty(); // Clear any existing rows
@@ -95,6 +107,9 @@ $.ajax({
     url: "http://localhost:5050/fcw/api/v1/crops",
     type: "GET",
     dataType: "json",
+    headers: {
+        "Authorization": `Bearer ${jwtToken}` // Add token to Authorization header
+    },
     success: function(data) {
         let tbody = $("#cropsTable tbody"); // Select the tbody of the table
         tbody.empty(); // Clear any existing rows
@@ -127,6 +142,9 @@ $.ajax({
     url: "http://localhost:5050/fcw/api/v1/staff",
     type: "GET",
     dataType: "json",
+    headers: {
+        "Authorization": `Bearer ${jwtToken}` // Add token to Authorization header
+    },
     success: function(data) {
         let tbody = $("#staffTable tbody"); // Select the tbody of the table
         tbody.empty(); // Clear any existing rows

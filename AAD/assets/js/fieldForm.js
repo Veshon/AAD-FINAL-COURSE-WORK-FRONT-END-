@@ -14,6 +14,9 @@ $(document).ready(function () {
                 url: "http://localhost:5050/fcw/api/v1/fields/" + selectedFieldCode,
                 type: "GET",
                 contentType: "application/json",
+                headers: {
+                    "Authorization": `Bearer ${jwtToken}` // Add token to Authorization header
+                },
                 success: function(data) {
                     // Populate the form fields with the received data
                     $("#fieldName").val(data.fieldName);
@@ -81,6 +84,9 @@ $(document).ready(function () {
         url: "http://localhost:5050/fcw/api/v1/fields",
         type: "GET",
         dataType: "json",
+        headers: {
+            "Authorization": `Bearer ${jwtToken}` // Add token to Authorization header
+        },
         success: function(data) {
             let select = $("#fieldCode");
             select.empty(); // Clear existing options if any
@@ -104,6 +110,9 @@ $(document).ready(function () {
         url: "http://localhost:5050/fcw/api/v1/crops",
         type: "GET",
         dataType: "json",
+        headers: {
+            "Authorization": `Bearer ${jwtToken}` // Add token to Authorization header
+        },
         success: function(data) {
             let select = $("#crop");
             select.empty(); // Clear existing options if any
@@ -127,6 +136,9 @@ $(document).ready(function () {
         url: "http://localhost:5050/fcw/api/v1/staff",
         type: "GET",
         dataType: "json",
+        headers: {
+            "Authorization": `Bearer ${jwtToken}` // Add token to Authorization header
+        },
         success: function(data) {
             let select = $("#staff");
             select.empty(); // Clear existing options if any
@@ -170,6 +182,9 @@ $(document).ready(function () {
             data: formData,
             processData: false, // Important: prevent jQuery from processing the data
             contentType: false, // Important: prevent jQuery from setting Content-Type header
+            headers: {
+                "Authorization": `Bearer ${jwtToken}` // Add token to Authorization header
+            },
             success: function(response) {
                 Swal.fire({
                     title: "Saved!",
@@ -209,7 +224,7 @@ $(document).ready(function () {
         $.ajax({
             url: "http://localhost:5050/fcw/api/v1/fields/" + idE,
             type: "DELETE",
-            headers: { "Content-Type": "application/json" },
+            headers: { "Content-Type": "application/json", "Authorization": `Bearer ${jwtToken}` },
             success: function(response) {
                 Swal.fire({
                     title: "Deleted!",
@@ -254,6 +269,9 @@ $(document).ready(function () {
             data: formData,
             processData: false, // Important: prevent jQuery from processing the data
             contentType: false, // Important: prevent jQuery from setting Content-Type header
+            headers: {
+                "Authorization": `Bearer ${jwtToken}` // Add token to Authorization header
+            },
             success: function(response) {
                 Swal.fire({
                     title: "Updated!",

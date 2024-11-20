@@ -55,6 +55,17 @@
     background-repeat: no-repeat;
 }
 
+#reportsForm:hover{
+    cursor: pointer;
+    /*opacity: 90%;*/
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+
+#logsPage:hover{
+    cursor: pointer;
+    /*opacity: 90%;*/
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
 
 #homeBtn>a>button{
     width: fit-content;

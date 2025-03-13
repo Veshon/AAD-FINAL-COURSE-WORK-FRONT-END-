@@ -18,15 +18,16 @@
 }
 
 #homeBtn>a>button>img{
-    width: 20px;
-    height: 20px;
+    width: 25px;
+    height: 25px;
     opacity: 100%;
 }
 
 #heading{
     position: absolute;
     top: 0;
-    left: 265px;
+    left: 585px;
+    font-size: 35px;
     font-family: Calibri;
     font-weight: bold;
     color: #DEBA66;
@@ -74,8 +75,8 @@ thead{
 }
 
 #blurBckgound {
-    width: 750px;
-    height: 155px;
+    width: 800px;
+    height: 160px;
     background-color: #F1D1AA;
     opacity: 50%;
     border-radius: 25px;
@@ -89,8 +90,8 @@ thead{
 }
 
 .txtField>select{
-    width: 200px;
-    height: 25px;
+    width: 220px;
+    height: 30px;
     cursor: pointer;
 }
 
@@ -108,8 +109,8 @@ thead{
 }
 
 .txtField>input{
-    width: 200px;
-    height: 25px;
+    width: 220px;
+    height: 30px;
 }
 
 .txtField2{
@@ -126,13 +127,13 @@ thead{
 }
 
 .txtField2>input{
-    width: 200px;
-    height: 25px;
+    width: 220px;
+    height: 30px;
 }
 
 .txtField2>select{
-    width: 200px;
-    height: 25px;
+    width: 220px;
+    height: 30px;
     cursor: pointer;
 }
 
@@ -143,30 +144,30 @@ thead{
     top: 0;
     bottom: 0;
     right: 0;
-    left: -505px;
+    left: -540px;
     margin: auto;
     display: flex;
     gap: 50px;
 }
 
 .txtField3>input{
-    width: 200px;
-    height: 25px;
+    width: 220px;
+    height: 30px;
 }
 
 .txtField3>select{
-    width: 200px;
-    height: 25px;
+    width: 220px;
+    height: 30px;
 }
 
 #allTxtFields>div>input{
-    font-size: 8px;
+    font-size: 10px;
     border-radius: 50px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 
 #allTxtFields>div>select{
-    font-size: 8px;
+    font-size: 10px;
     border-radius: 50px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
@@ -174,7 +175,7 @@ thead{
 #allBtns>button{
     width: 70px;
     height: 30px;
-    font-size: 12px;
+    font-size: 14px;
     font-family: Calibri;
     border-radius: 20px;
     border-color: #DCBB8C;

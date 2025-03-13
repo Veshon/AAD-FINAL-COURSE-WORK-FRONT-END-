@@ -8,11 +8,10 @@
 #heading{
     position: absolute;
     top: 0;
-    left: 280px;
+    left: 545px;
     font-family: Calibri;
     font-weight: bold;
-    font-size: 20px;
-    /*color: #F5C584;*/
+    font-size: 25px;
     color: black;
 }
 
@@ -23,15 +22,15 @@
 }
 
 #logsPage{
-    width: 150px;
-    height: 25px;
+    width: 190px;
+    height: 40px;
     /*background-color: yellow;*/
     border-radius: 20px;
     position: absolute;
-    top: 300px;
+    top: 500px;
     bottom: 0;
     right: 0;
-    left: 200px;
+    left: 210px;
     margin: auto;
     background-image: url("logsBackground.jpg");
     background-size: cover;
@@ -40,14 +39,14 @@
 }
 
 #reportsForm{
-    width: 150px;
-    height: 25px;
+    width: 190px;
+    height: 40px;
     border-radius: 20px;
     position: absolute;
-    top: 300px;
+    top: 500px;
     bottom: 0;
     right: 0;
-    left: -200px;
+    left: -210px;
     margin: auto;
     background-image: url("reportsFormBackgroung.jpg");
     background-size: cover;
@@ -76,8 +75,8 @@
 }
 
 #homeBtn>a>button>img{
-    width: 20px;
-    height: 20px;
+    width: 25px;
+    height: 25px;
     opacity: 100%;
 }
 
@@ -127,13 +126,13 @@
     width: fit-content;
     display: none;
     color: black;
-    font-size: 17px;
+    font-size: 18px;
     font-weight: bold;
     position: relative;
     top: 30px;
     bottom: 0;
     right: 0;
-    left: 50px;
+    left: 100px;
 }
 
 #forms>div>a>h6:nth-child(2){
@@ -141,13 +140,13 @@
     height: 180px;
     display: none;
     color: black;
-    font-size: 17px;
+    font-size: 18px;
     font-weight: bold;
     position: relative;
     top: 30px;
     bottom: 0;
     right: 0;
-    left: 20px;
+    left: 65px;
 }
 
 #forms>div{
@@ -160,8 +159,8 @@
 }
 
 #fieldForm{
-    width: 200px;
-    height: 250px;
+    width: 250px;
+    height: 370px;
     /*background-color: red;*/
     /*position: absolute;*/
     top: 0;
@@ -179,8 +178,8 @@
 }
 
 #staffForm{
-    width: 200px;
-    height: 250px;
+    width: 250px;
+    height: 370px;
     /*background-color: #BBC6B5;*/
     /*position: absolute;*/
     top: 0;
@@ -198,8 +197,8 @@
 }
 
 #cropsForm{
-    width: 200px;
-    height: 250px;
+    width: 250px;
+    height: 370px;
     /*background-color: #BBC6B5;*/
     /*position: absolute;*/
     top: 0;
@@ -217,8 +216,8 @@
 }
 
 #toolsForm{
-    width: 200px;
-    height: 250px;
+    width: 250px;
+    height: 370px;
     /*background-color: #BBC6B5;*/
     /*position: absolute;*/
     top: 0;
@@ -236,8 +235,8 @@
 }
 
 #vehicleForm{
-    width: 200px;
-    height: 250px;
+    width: 250px;
+    height: 370px;
     /*background-color: #BBC6B5;*/
     /*position: absolute;*/
     top: 0;

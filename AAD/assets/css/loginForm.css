@@ -8,7 +8,7 @@
     top: 0;
     bottom: 0;
     right: 0;
-    left: 320px;
+    left: 650px;
     margin: auto;
     font-family: Calibri;
     font-weight: bold;
@@ -19,22 +19,22 @@
     max-width: fit-content;
     max-height: fit-content;
     position: absolute;
-    top: 40px;
+    top: 10px;
     bottom: 0;
     right: 0;
-    left: 0;
+    left: 10px;
     margin: auto;
     gap: 50px;
 }
 
 .txtField>input{
-    width: 180px;
-    height: 25px;
+    width: 200px;
+    height: 30px;
     margin: 0 10px 20px 0;
 }
 
 #allTxtFields>div>input{
-    font-size: 8px;
+    font-size: 10px;
     border-radius: 50px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
@@ -71,13 +71,13 @@
 }
 
 #blurBckgound {
-    width: 210px;
-    height: 250px;
+    width: 350px;
+    height: 330px;
     background-color: #607951;
     opacity: 80%;
     border-radius: 25px;
     position: absolute;
-    top: -10px;
+    top: -60px;
     bottom: 0;
     right: 0;
     left: 0;
@@ -90,12 +90,12 @@
 }
 
 #signUp{
-    font-size: 8px;
+    font-size: 10px;
     position: relative;
     top: 45px;
     bottom: 0;
     right: 0;
-    left: 30px;
+    left: 20px;
     color: white;
 }
 
@@ -104,7 +104,7 @@
     height: fit-content;
     border-radius: 100%;
     position: absolute;
-    top: -170px;
+    top: -280px;
     bottom: 0;
     right: 0;
     left: 0;

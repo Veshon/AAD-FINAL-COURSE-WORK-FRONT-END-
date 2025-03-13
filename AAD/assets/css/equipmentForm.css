@@ -22,8 +22,8 @@
 }
 
 #homeBtn>a>button>img{
-    width: 20px;
-    height: 20px;
+    width: 25px;
+    height: 25px;
     opacity: 100%;
 }
 
@@ -32,8 +32,9 @@
     top: 0;
     bottom: 0;
     right: 0;
-    left: 250px;
+    left: 540px;
     margin: auto;
+    font-size: 35px;
     font-family: Calibri;
     font-weight: bold;
     color: #F5C584;
@@ -41,7 +42,7 @@
 }
 
 .txtField>select{
-    width: 200px;
+    width: 220px;
     height: 25px;
     cursor: pointer;
 }
@@ -60,8 +61,8 @@
 }
 
 .txtField>input{
-    width: 200px;
-    height: 25px;
+    width: 220px;
+    height: 30px;
 }
 
 .txtField2{
@@ -78,19 +79,19 @@
 }
 
 .txtField2>input{
-    width: 200px;
-    height: 25px;
+    width: 220px;
+    height: 30px;
 }
 
 .txtField2>select{
-    width: 200px;
-    height: 25px;
+    width: 220px;
+    height: 30px;
     cursor: pointer;
 }
 
 #blurBckgound {
-    width: 750px;
-    height: 110px;
+    width: 800px;
+    height: 150px;
     background-color: #F1D1AA;
     opacity: 50%;
     border-radius: 25px;
@@ -104,13 +105,13 @@
 }
 
 #allTxtFields>div>input{
-    font-size: 8px;
+    font-size: 10px;
     border-radius: 50px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 
 #allTxtFields>div>select{
-    font-size: 8px;
+    font-size: 10px;
     border-radius: 50px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
@@ -118,7 +119,7 @@
 #allBtns>button{
     width: 70px;
     height: 30px;
-    font-size: 12px;
+    font-size: 14px;
     font-family: Calibri;
     border-radius: 20px;
     border-color: #DCBB8C;

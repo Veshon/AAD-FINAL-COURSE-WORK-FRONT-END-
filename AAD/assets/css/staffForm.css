@@ -13,8 +13,8 @@
 }
 
 #homeBtn>a>button>img{
-    width: 20px;
-    height: 20px;
+    width: 25px;
+    height: 25px;
     opacity: 100%;
 }
 
@@ -26,15 +26,16 @@
 #heading{
     position: absolute;
     top: 0;
-    left: 320px;
+    left: 640px;
+    font-size: 35px;
     font-family: Calibri;
     font-weight: bold;
     color: #B98F5A;
 }
 
 .txtField>select{
-    width: 180px;
-    height: 25px;
+    width: 200px;
+    height: 30px; !important;
     cursor: pointer;
 }
 
@@ -52,8 +53,8 @@
 }
 
 .txtField>input{
-    width: 180px;
-    height: 25px;
+    width: 200px;
+    height: 30px;
 }
 
 .txtField2{
@@ -70,13 +71,13 @@
 }
 
 .txtField2>input{
-    width: 180px;
-    height: 25px;
+    width: 200px;
+    height: 30px;
 }
 
 .txtField2>select{
-    width: 180px;
-    height: 25px;
+    width: 200px;
+    height: 30px;
     cursor: pointer;
 }
 
@@ -94,8 +95,8 @@
 }
 
 .txtField3>input{
-    width: 180px;
-    height: 25px;
+    width: 200px;
+    height: 30px;
 }
 
 .txtField4{
@@ -112,13 +113,13 @@
 }
 
 .txtField4>input{
-    width: 180px;
-    height: 25px;
+    width: 200px;
+    height: 30px;
 }
 
 .txtField4>select{
-    width: 180px;
-    height: 25px;
+    width: 200px;
+    height: 30px;
     cursor: pointer;
 }
 
@@ -130,39 +131,39 @@
     top: 200px;
     bottom: 0;
     right: 0;
-    left: -560px;
+    left: -615px;
     margin: auto;
     display: flex;
     gap: 50px;
 }
 
 .txtField5>input{
-    width: 180px;
-    height: 25px;
+    width: 200px;
+    height: 30px;
 }
 
 .txtField5>select{
-    width: 180px;
-    height: 25px;
+    width: 200px;
+    height: 30px;
     cursor: pointer;
 }
 
 #allTxtFields>div>input{
-    font-size: 8px;
+    font-size: 10px;
     border-radius: 50px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 
 #allTxtFields>div>select{
-    font-size: 8px;
+    font-size: 10px;
     border-radius: 50px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 
 #allBtns>button{
     width: 70px;
-    height: 30px;
-    font-size: 12px;
+    height: 35px;
+    font-size: 14px;
     font-family: Calibri;
     border-radius: 20px;
     border-color: #DCBB8C;

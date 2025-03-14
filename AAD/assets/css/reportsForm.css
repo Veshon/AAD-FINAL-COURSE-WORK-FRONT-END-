@@ -5,7 +5,8 @@ body {
 #heading{
     position: absolute;
     top: 0;
-    left: 350px;
+    left: 650px;
+    font-size: 35px;
     font-family: Calibri;
     font-weight: bold;
     color: #F5C584;
@@ -139,7 +140,7 @@ td, th {
     height: 200px;
     font-size: 10px;
     position: absolute;
-    top: 300px;
+    top: -130px;
     bottom: 0;
     right: 0;
     left: 0;
@@ -215,7 +216,7 @@ thead{
     height: 200px;
     font-size: 10px;
     position: absolute;
-    top: 630px;
+    top: 480px;
     bottom: 0;
     right: 0;
     left: 0;
@@ -240,9 +241,11 @@ thead{
 }
 
 #buttons>a>button{
-    width: 70px;
+    width: 85px;
     height: 30px;
-    font-size: 12px;
+    position: relative;
+    left: 270px;
+    font-size: 14px;
     font-family: Calibri;
     font-weight: bold;
     border-radius: 20px;
